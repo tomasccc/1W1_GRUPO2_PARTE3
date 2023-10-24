@@ -1,5 +1,4 @@
-﻿using _1W1_GRUPO2_PARTE3.PRESENTACION;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,24 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _1W1_GRUPO2_PARTE3
+namespace _1W1_GRUPO2_PARTE3.PRESENTACION
 {
-    public partial class Form1 : Form
+    public partial class FormPrincipal : Form
     {
-        public Form1()
+        public FormPrincipal()
         {
             InitializeComponent();
         }
 
-        private void loginToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void logInToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormLogin s=new FormLogin();
+            FormLogin s = new FormLogin();
             s.ShowDialog();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

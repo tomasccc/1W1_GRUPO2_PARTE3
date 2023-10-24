@@ -14,11 +14,11 @@ namespace _1W1_GRUPO2_PARTE3.ENTIDADES
         public string nombre { get; set; }
         public string apellido { get; set; }
         public string contraseña { get; set; }
-        public string email  { get; set; }
+        public string email { get; set; }
 
         public Cliente()
         {
-            
+
         }
     }
 }

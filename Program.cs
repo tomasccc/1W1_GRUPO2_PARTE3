@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _1W1_GRUPO2_PARTE3.PRESENTACION;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace _1W1_GRUPO2_PARTE3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormPrincipal());
         }
     }
 }

@@ -215,8 +215,8 @@
             // txtValidacion
             // 
             this.txtValidacion.AutoSize = true;
-            this.txtValidacion.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtValidacion.Location = new System.Drawing.Point(285, 299);
+            this.txtValidacion.ForeColor = System.Drawing.Color.IndianRed;
+            this.txtValidacion.Location = new System.Drawing.Point(232, 300);
             this.txtValidacion.Name = "txtValidacion";
             this.txtValidacion.Size = new System.Drawing.Size(0, 13);
             this.txtValidacion.TabIndex = 27;

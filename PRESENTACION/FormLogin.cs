@@ -27,5 +27,10 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
             FormCrearUsuario l =new FormCrearUsuario();
             l.ShowDialog();
         }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

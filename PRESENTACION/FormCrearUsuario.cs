@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -52,7 +53,10 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
         {
             if (Validar())
             {
-                
+                /*if ()
+                {
+
+                }*/
             }
         }
 
@@ -60,40 +64,49 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
         {
             if (txtnombre.Text == string.Empty)
             {
-                txtValidacion.Text = "Debe completar los campos obligatorios";
+                txtValidacion.Text = "(Debe completar los campos obligatorios)";
                 return false;
             }
             if (txtapellido.Text == string.Empty)
             {
-                txtValidacion.Text = "Debe completar los campos obligatorios";
+                txtValidacion.Text = "(Debe completar los campos obligatorios)";
                 return false;
             }
             if (txtmail.Text == string.Empty)
             {
-                txtValidacion.Text = "Debe completar los campos obligatorios";
+                txtValidacion.Text = "(Debe completar los campos obligatorios)";
                 return false;
             }
             if (txtcontra.Text == string.Empty)
             {
-                txtValidacion.Text = "Debe completar los campos obligatorios";
+                txtValidacion.Text = "(Debe completar los campos obligatorios)";
                 return false;
             }
             if (txtcontraval.Text == string.Empty)
             {
-                txtValidacion.Text = "Debe completar los campos obligatorios";
+                txtValidacion.Text = "(Debe completar los campos obligatorios)";
                 return false;
-            }//v||
+            }
             if (dtpFechanac.Value == null)
             {
-                txtValidacion.Text = "Debe completar los campos obligatorios";
+                txtValidacion.Text = "(Debe completar los campos obligatorios)";
                 return false;
             }
             if(dtpFechanac.Value > DateTime.Now)
             {
-                txtValidacion.Text = "La fecha de nacimiento no puede ser mayor a la fecha actual";
+                txtValidacion.Text = "(La fecha de nacimiento no puede ser mayor a la fecha actual)";
                 return false;
             }
-            if(txtcontra.Text.Length<7 || txtcontraval.Text.Contains())
+            if(txtcontra.Text.Length<7 || txtconfirmarcontra.Text.Length<7)
+            {
+                txtValidacion.Text = "(La contraseña debe contener más de 7 carácteres)";
+                return false;
+            }
+            if (txtcontra.Text!=txtconfirmarcontra.Text)
+            {
+                txtValidacion.Text = "(Las contraseñas deben ser iguales)";
+                return false;
+            }
             return true;
         }
 

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DATOS\ClienteDAO.cs" />
     <Compile Include="DATOS\DBHelper.cs" />
     <Compile Include="ENTIDADES\Cliente.cs" />
     <Compile Include="ENTIDADES\Funcion.cs" />
@@ -81,6 +82,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SERVICIO\GestorCliente.cs" />
     <EmbeddedResource Include="PRESENTACION\FormCrearUsuario.resx">
       <DependentUpon>FormCrearUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,5 +114,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

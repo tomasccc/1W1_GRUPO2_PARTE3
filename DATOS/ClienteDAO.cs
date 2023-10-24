@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace _1W1_GRUPO2_PARTE3.DATOS
 {
-    internal class DBHelper
+    internal class ClienteDAO
     {
-        public DBHelper()
-        {
-            
-        }
+        
     }
 }
