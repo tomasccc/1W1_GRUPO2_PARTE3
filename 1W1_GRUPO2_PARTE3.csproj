@@ -48,8 +48,13 @@
   <ItemGroup>
     <Compile Include="DATOS\ClienteDAO.cs" />
     <Compile Include="DATOS\DBHelper.cs" />
+    <Compile Include="DATOS\Parametro.cs" />
     <Compile Include="ENTIDADES\Cliente.cs" />
     <Compile Include="ENTIDADES\Funcion.cs" />
+    <Compile Include="FABRICA\FactoryGestorCliente.cs" />
+    <Compile Include="FABRICA\FactoryGestorClienteImp.cs" />
+    <Compile Include="INTERFACES\IClienteDAO.cs" />
+    <Compile Include="INTERFACES\IGestorCliente.cs" />
     <Compile Include="PRESENTACION\FormCompra.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _1W1_GRUPO2_PARTE3.ENTIDADES;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
 {
     public partial class FormPrincipal : Form
     {
+        Cliente ClientePrinc { get; set; }
         public FormPrincipal()
         {
             InitializeComponent();
@@ -21,6 +23,11 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
         {
             FormLogin s = new FormLogin();
             s.ShowDialog();
+        }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
