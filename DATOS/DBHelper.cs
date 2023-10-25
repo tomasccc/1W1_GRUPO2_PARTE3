@@ -64,6 +64,23 @@ namespace _1W1_GRUPO2_PARTE3.DATOS
             conexion.Close();
             return tabla;
         }
+
+        /*public int Consultar(string nombreSP, List<Parametro> lParams)
+        {
+            conexion.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = nombreSP;
+            foreach (Parametro p in lParams)
+            {
+                comando.Parameters.AddWithValue(p.Name, p.Value);
+            }
+            DataTable tabla = new DataTable();
+            int afectadas=comando.ExecuteNonQuery();
+            conexion.Close();
+            return afectadas;
+        }*/
     }
 
     

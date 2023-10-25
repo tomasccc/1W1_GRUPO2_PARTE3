@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _1W1_GRUPO2_PARTE3.ENTIDADES
 {
-    internal class Cliente
+    public class Cliente
     {
         public int ID { get; set; }
         public int telefono { get; set; }

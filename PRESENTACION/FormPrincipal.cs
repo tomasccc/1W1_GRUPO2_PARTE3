@@ -1,4 +1,6 @@
 ﻿using _1W1_GRUPO2_PARTE3.ENTIDADES;
+using _1W1_GRUPO2_PARTE3.FABRICA;
+using _1W1_GRUPO2_PARTE3.SERVICIO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +15,7 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
 {
     public partial class FormPrincipal : Form
     {
+        FactoryGestorCliente fabrica;
         Cliente ClientePrinc { get; set; }
         public FormPrincipal()
         {
@@ -21,7 +24,7 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
 
         private void logInToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormLogin s = new FormLogin();
+            FormLogin s = new FormLogin((GestorCliente)fabrica.CrearGestorCliente());
             s.ShowDialog();
         }
 
