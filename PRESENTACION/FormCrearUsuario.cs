@@ -1,4 +1,6 @@
-﻿using System;
+﻿using _1W1_GRUPO2_PARTE3.DATOS;
+using _1W1_GRUPO2_PARTE3.INTERFACES;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,9 +16,11 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
 {
     public partial class FormCrearUsuario : Form
     {
-        public FormCrearUsuario()
+        IServicio gestor;
+        public FormCrearUsuario(IServicio g)
         {
             InitializeComponent();
+            gestor = g;
             dtpFechanac.MaxDate = DateTime.Now;
             EnterLeaveCampos();
         }
@@ -53,10 +57,22 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
         {
             if (Validar())
             {
-                /*if ()
-                {
+                List<Parametro> list = new List<Parametro>();
+                list.Add(new Parametro("@nombre", txtnombre.Text.ToString()));
+                list.Add(new Parametro("@apellido", txtapellido.Text.ToString()));
+                list.Add(new Parametro("@mail", txtmail.Text.ToString()));
+                list.Add(new Parametro("@nro_tel", txtcelular.Text.ToString()));
+                list.Add(new Parametro("@fecha_nac", dtpFechanac.Value.ToString()));
+                list.Add(new Parametro("@contraseña", txtconfirmarcontra.Text.ToString()));
 
-                }*/
+
+                if (gestor.RegistrarCliente(list)>0)
+                {
+                    MessageBox.Show("se registro con exito");
+                }
+                else MessageBox.Show("error al grabar");
+
+                this.Close();
             }
         }
 
@@ -193,6 +209,19 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
             if (checkMostrarCaracteres.Checked)
             {
                 txtconfirmarcontra.Text = texto;
+            }
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Seguro que quiere salir?", "Atencion", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Close();
             }
         }
 

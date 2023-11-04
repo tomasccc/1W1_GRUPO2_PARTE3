@@ -18,7 +18,7 @@ namespace _1W1_GRUPO2_PARTE3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPrincipal());
+            Application.Run(new FormLogin(new FactoryServicioImp()));
         }
     }
 }

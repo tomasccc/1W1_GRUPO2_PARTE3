@@ -51,10 +51,10 @@
     <Compile Include="DATOS\Parametro.cs" />
     <Compile Include="ENTIDADES\Cliente.cs" />
     <Compile Include="ENTIDADES\Funcion.cs" />
-    <Compile Include="FABRICA\FactoryGestorCliente.cs" />
-    <Compile Include="FABRICA\FactoryGestorClienteImp.cs" />
+    <Compile Include="FABRICA\FactoryServicio.cs" />
+    <Compile Include="FABRICA\FactoryServicioImp.cs" />
     <Compile Include="INTERFACES\IClienteDAO.cs" />
-    <Compile Include="INTERFACES\IGestorCliente.cs" />
+    <Compile Include="INTERFACES\IServicio.cs" />
     <Compile Include="PRESENTACION\FormCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,19 +64,19 @@
     <Compile Include="PRESENTACION\FormCrearUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PRESENTACION\FormCrearUsuario.Designer.cs">
+    <Compile Include="PRESENTACION\FormCrearUsuario.designer.cs">
       <DependentUpon>FormCrearUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="PRESENTACION\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PRESENTACION\FormLogin.Designer.cs">
+    <Compile Include="PRESENTACION\FormLogin.designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="PRESENTACION\FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PRESENTACION\FormPrincipal.Designer.cs">
+    <Compile Include="PRESENTACION\FormPrincipal.designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="PRESENTACION\FormReservar.cs">
@@ -87,7 +87,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SERVICIO\GestorCliente.cs" />
+    <Compile Include="SERVICIO\Servicio.cs" />
     <EmbeddedResource Include="PRESENTACION\FormCrearUsuario.resx">
       <DependentUpon>FormCrearUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PRESENTACION\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRESENTACION\FormReservar.resx">
+      <DependentUpon>FormReservar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

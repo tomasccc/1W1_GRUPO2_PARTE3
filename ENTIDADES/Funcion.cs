@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _1W1_GRUPO2_PARTE3.ENTIDADES
 {
-    internal class Funcion
+    public class Funcion
     {
         public int IdPelicula { get; set; }
         public int Id { get; set; }

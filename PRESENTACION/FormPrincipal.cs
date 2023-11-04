@@ -15,7 +15,7 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
 {
     public partial class FormPrincipal : Form
     {
-        FactoryGestorCliente fabrica;
+        FactoryServicio fabrica;
         Cliente ClientePrinc { get; set; }
         public FormPrincipal()
         {
@@ -24,11 +24,15 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
 
         private void logInToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormLogin s = new FormLogin((GestorCliente)fabrica.CrearGestorCliente());
-            s.ShowDialog();
+           
         }
 
         private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cuentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

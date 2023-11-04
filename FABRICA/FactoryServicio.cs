@@ -8,11 +8,9 @@ using System.Threading.Tasks;
 
 namespace _1W1_GRUPO2_PARTE3.FABRICA
 {
-    internal class FactoryGestorClienteImp : FactoryGestorCliente
+    public abstract class FactoryServicio
     {
-        public override IGestorCliente CrearGestorCliente()
-        {
-            return new GestorCliente();
-        }
+        public abstract IServicio CrearGestor();
+       
     }
 }

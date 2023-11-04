@@ -8,10 +8,12 @@ using System.Threading.Tasks;
 
 namespace _1W1_GRUPO2_PARTE3.INTERFACES
 {
-    public interface IGestorCliente
+    public interface IServicio
     {
         bool ExisteCliente(List<Parametro> liust);
+        int RegistrarCliente(List<Parametro> list);
+        Cliente TraerCLiente(List<Parametro> lius);
 
-        Cliente TraerCLiente();
+        List<Funcion> TraerFunciones(int id);
     }
 }
