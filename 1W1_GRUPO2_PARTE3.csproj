@@ -76,14 +76,38 @@
     <Compile Include="PRESENTACION\FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PRESENTACION\FormPrincipal.designer.cs">
+    <Compile Include="PRESENTACION\FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENTACION\FormReportesRegistros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENTACION\FormReportesRegistros.Designer.cs">
+      <DependentUpon>FormReportesRegistros.cs</DependentUpon>
     </Compile>
     <Compile Include="PRESENTACION\FormReservar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PRESENTACION\FormReservar.Designer.cs">
       <DependentUpon>FormReservar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENTACION\FormSoporteClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENTACION\FormSoporteClientes.Designer.cs">
+      <DependentUpon>FormSoporteClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENTACION\FormTransaccionFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENTACION\FormTransaccionFactura.Designer.cs">
+      <DependentUpon>FormTransaccionFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRESENTACION\FromSoporteClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENTACION\FromSoporteClientes.Designer.cs">
+      <DependentUpon>FromSoporteClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PRESENTACION\FormReservar.resx">
       <DependentUpon>FormReservar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRESENTACION\FromSoporteClientes.resx">
+      <DependentUpon>FromSoporteClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
