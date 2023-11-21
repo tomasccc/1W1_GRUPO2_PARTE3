@@ -28,6 +28,7 @@ namespace FrontEnd.PRESENTACION
         bool esAdmin;
         Cliente cliente;
 
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -80,6 +81,8 @@ namespace FrontEnd.PRESENTACION
             subMenuSoporte.Visible = false;
             subMenuAcercaDe.Visible = false;
             subMenuTransaccion.Visible = false;
+            pnlIntegrantes.Visible = false;
+            pnlProfesor.Visible = false;
         }
         private void btnRegistros_Click(object sender, EventArgs e)
         {
@@ -97,10 +100,18 @@ namespace FrontEnd.PRESENTACION
             subMenuAcercaDe.Visible = false;
             subMenuReportes.Visible = false;
             subMenuTransaccion.Visible = false;
+            pnlIntegrantes.Visible = false;
+            pnlProfesor.Visible = false;
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+
         }
 
         private void btnSoporte_Click(object sender, EventArgs e)
@@ -111,6 +122,8 @@ namespace FrontEnd.PRESENTACION
             subMenuReportes.Visible = false;
             subMenuTransaccion.Visible = false;
             pnlConsultas.Visible = false;
+            pnlIntegrantes.Visible = false;
+            pnlProfesor.Visible = false;
         }
         private void btnClientes_Click(object sender, EventArgs e)
         {
@@ -137,14 +150,16 @@ namespace FrontEnd.PRESENTACION
             subMenuReportes.Visible = false;
             subMenuSoporte.Visible = false;
             pnlConsultas.Visible = false;
+            pnlIntegrantes.Visible = false;
+            pnlProfesor.Visible = false;
         }
 
         private void btnFactura_Click(object sender, EventArgs e)
         {
             subMenuTransaccion.Visible = false;
 
-            //FormTransaccionFactura formTransaccionFactura = new FormTransaccionFactura();
-            //formTransaccionFactura.Show();
+            FormTransaccionFactura formTransaccionFactura = new FormTransaccionFactura(gestorfac);
+            formTransaccionFactura.Show();
         }
 
 
@@ -157,22 +172,24 @@ namespace FrontEnd.PRESENTACION
             subMenuSoporte.Visible = false;
             subMenuTransaccion.Visible = false;
             pnlConsultas.Visible = false;
+            pnlIntegrantes.Visible = false;
+            pnlProfesor.Visible = false;
         }
         private void btnIntegrantes_Click(object sender, EventArgs e)
         {
-            Integrantes.Visible = true;
-            panProfesor.Visible = false;
+            pnlIntegrantes.Visible = true;
+            pnlProfesor.Visible = false;
         }
         private void btnProfesor_Click(object sender, EventArgs e)
         {
-            panProfesor.Visible = true;
-            Integrantes.Visible = false;
+            pnlProfesor.Visible = true;
+            pnlIntegrantes.Visible = false;
 
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-            panProfesor.Visible = true;
+            pnlProfesor.Visible = true;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -181,7 +198,7 @@ namespace FrontEnd.PRESENTACION
         }
         private void AbrirReservar(Pelicula Pelicula)
         {
-            FormReservar f = new FormReservar(gestorbut, Pelicula, gestorfunciones, gestorfac,cliente,new Facturas());
+            FormReservar f = new FormReservar(gestorbut, Pelicula, gestorfunciones, gestorfac, cliente, new Facturas());
             f.ShowDialog();
         }
 
@@ -223,8 +240,10 @@ namespace FrontEnd.PRESENTACION
             subMenuSoporte.Visible = false;
             subMenuTransaccion.Visible = false;
             pnlConsultas.Visible = true;
-            /*FormConsultaIngresos f=new FormConsultaIngresos(gestorfac);
-            f.ShowDialog();*/
+            pnlIntegrantes.Visible = false;
+            pnlProfesor.Visible = false;
+            //FormConsultaIngresos f = new FormConsultaIngresos(gestorfac);
+            //f.ShowDialog();
             //FormConsultaClienteMedio f = new FormConsultaClienteMedio(gecliente, gestorfac);
             //f.ShowDialog();
         }
@@ -255,7 +274,10 @@ namespace FrontEnd.PRESENTACION
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            pictureBox1.BringToFront();
+            picMinimizar.BringToFront();
+            picPerfil.BringToFront();
+            picMaximizar.BringToFront();
+            picGuardar.BringToFront();
             ReleaseCapture();
             SendMessage(this.Handle, 0x0112, 0xf012, 0);
         }
@@ -269,6 +291,61 @@ namespace FrontEnd.PRESENTACION
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x0112, 0xf012, 0);
+        }
+
+        private void btnIntegrantes_Click_1(object sender, EventArgs e)
+        {
+            pnlIntegrantes.Visible = true;
+            pnlProfesor.Visible = false;
+        }
+
+        private void btnProfesor_Click_1(object sender, EventArgs e)
+        {
+            pnlIntegrantes.Visible = false;
+            pnlProfesor.Visible = true;
+
+        }
+
+        private void SalirClickk_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            clickMaximizar.Visible = false;
+            clickRestaurar.Visible = true;
+            picMaximizar.BringToFront();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            clickMaximizar.Visible = true;
+            clickRestaurar.Visible = false;
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+            FormPerfil p = new FormPerfil(cliente);
+            p.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -30,7 +30,6 @@
     <Compile Update="PRESENTACION\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="PRESENTACION\FormPrincipal.cs" />
     <Compile Update="PRESENTACION\FormReportesRegistros.cs">
       <SubType>Form</SubType>
     </Compile>

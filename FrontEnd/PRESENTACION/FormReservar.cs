@@ -79,8 +79,9 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
             if (resultado == null)
             {
 
-            
-            }else
+
+            }
+            else
                 fechas = resultado;
 
             cboFunciones.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -126,7 +127,7 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
             dto.idfuncion = idFuncion;
             string url = "https://localhost:7214/api/Butacas/TraerButacas";
             List<Butaca> resultado = await ClienteSingleton.getInstance().PostTraerButacasAsync(url, dto);
-            listab = resultado  ;
+            listab = resultado;
             fechaDet = Convert.ToDateTime(cboFunciones.SelectedItem);
             horarioDet = Convert.ToDateTime(cboHorario.SelectedItem);
 
@@ -275,7 +276,7 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
                 traerid.horario = cboHorario.SelectedItem.ToString();
                 string url = "https://localhost:7214/api/Funciones/TraerIdFuncion";
                 int resultado = await ClienteSingleton.getInstance().PostTraerIdFuncionAsync(url, traerid);
-                funcion.Id= resultado;
+                funcion.Id = resultado;
                 if (resultado != 0)
                 {
                     BorrarBotones();
@@ -320,7 +321,7 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
             GuardarButacasReservadas();
             if (Validar())
             {
-                FormCompra f = new FormCompra(p, gestorfac, butacasreservadas, fechaDet, horarioDet,nueva,c,funcion,this);
+                FormCompra f = new FormCompra(p, gestorfac, butacasreservadas, fechaDet, horarioDet, nueva, c, funcion, this);
                 f.ShowDialog();
             }
         }

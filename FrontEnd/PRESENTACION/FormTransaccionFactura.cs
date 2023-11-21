@@ -16,13 +16,12 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
 {
     public partial class FormTransaccionFactura : Form
     {
-        Funcion f;
         IGestorFacturas g;
         List<Facturas> lstfacturas = new List<Facturas>();
-        public FormTransaccionFactura(IGestorFacturas ge, Funcion f, List<Butaca> butacas)
+        public FormTransaccionFactura(IGestorFacturas ge)
         {
             InitializeComponent();
-            this.f = f;
+
             g = ge;
         }
 
@@ -56,22 +55,21 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
         {
 
             DGVClientes.Rows.Clear();
-            if (Validar())
+
+            string nom = txtnombre.Text;
+            string ape = txtapellido.Text;
+            lstfacturas = g.TraerFacturas(nom, ape);
+            foreach (Facturas li in lstfacturas)
             {
-                string nom = txtnombre.Text;
-                string ape = txtapellido.Text;
-                lstfacturas = g.TraerFacturas(nom, ape);
-                foreach (Facturas li in lstfacturas)
-                {
 
-                    DGVClientes.Rows.Add(new object[] {
-                        li.nombre,li.apellido,li.idFactura,li.id_medio_pago,
-                        li.tipoVenta,li.fecha,"Editar","Eliminar" });
-
-                }
-                DGVClientes.Columns["Fecha"].DefaultCellStyle.Format = "dd/MM/yyyy";
+                DGVClientes.Rows.Add(new object[] {"",
+                        li.nombre,li.apellido,li.idFactura,li.medio_pago,
+                        li.tipoVentadesc,li.fecha });
 
             }
+            DGVClientes.Columns["Fecha"].DefaultCellStyle.Format = "dd/MM/yyyy";
+
+
 
         }
 
@@ -103,11 +101,6 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
 
                 }
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

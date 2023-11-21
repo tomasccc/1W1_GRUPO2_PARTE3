@@ -129,14 +129,14 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
             cboMedioP.DataSource = resultado;
             cboMedioP.ValueMember = "Id";
             cboMedioP.DisplayMember = "Medio";
-           
+
             cboMedioP.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private async void btnComprar_Click(object sender, EventArgs e)
         {
             FacturaGrabarDTO dto = new FacturaGrabarDTO();
-            dto.idmediopago = (int)cboMedioP.SelectedValue; 
+            dto.idmediopago = (int)cboMedioP.SelectedValue;
             dto.idcliente = c.ID;
             dto.fecha = DateTime.Now;
             string url = "https://localhost:7214/api/Facturas/InsertarFactura";

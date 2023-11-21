@@ -14,6 +14,71 @@ namespace _1W1_GRUPO2_PARTE3.DATOS
 {
     internal class FacturasDao : IFacturasDao
     {
+        public bool EditarFacturas(List<Parametro> l)
+        {
+            int afectadas = DBHelper.ObtenerInstancia().Actualizar("SP_EDITAR_FACTURAS", l);
+            if (afectadas > 0)
+            {
+                return true;
+            }
+            else
+            { return false; }
+        }
+
+        public bool EliminarFactura(int id)
+        {
+            List<Parametro> lista = new List<Parametro> { new Parametro("@id", id) };
+            int afectadas = DBHelper.ObtenerInstancia().Actualizar("SP_eliminar_factura", lista);
+            if (afectadas > 0)
+            {
+                return true;
+            }
+            else
+            { return false; }
+        }
+
+        public DataTable TraerFacturas(string nom, string ape)
+        {
+            List<Parametro> list = new List<Parametro>();
+            list.Add(new Parametro("@nom", nom));
+            list.Add(new Parametro("@ape", ape));
+            DataTable tabla = DBHelper.ObtenerInstancia().Consultar(@"sp_cargar_factura",list);
+            return tabla;
+        }
+
+        public DataTable EjecutarIngresosXDia(DateTime diadesde,DateTime diahasta)
+        {
+            List<Parametro> parametros = new List<Parametro>();
+            parametros.Add(new Parametro("@diadesde", diadesde));
+            parametros.Add(new Parametro("@diahasta", diahasta));
+            return DBHelper.ObtenerInstancia().Consultar("SP_INGRESOS_POR_DIA",parametros);
+        }
+
+        public DataTable TraerIdUsuario(string usuario)
+        {
+            List<Parametro> parametros = new List<Parametro>();
+            parametros.Add(new Parametro("@usuario", usuario));
+            DataTable table=new DataTable();
+            table= DBHelper.ObtenerInstancia().Consultar("SP_traer_id_cliente",parametros);
+            return table;
+        }
+
+        public DataTable TraerMedioPago(string nt)
+        {
+            DataTable tabla=new DataTable();
+            tabla=DBHelper.ObtenerInstancia().ConsultarTabla(nt);
+            return tabla;
+        }
+
+        public DataTable VerificarMail(string usuario)
+        {
+            List<Parametro> parametros = new List<Parametro>();
+            parametros.Add(new Parametro("@mail", usuario));
+            DataTable tabla = DBHelper.ObtenerInstancia().Consultar("SP_VERIFICAR_MAIL", parametros);
+                return tabla;
+            
+        }
+
         public bool GrabarFactura(Facturas f)
         {
             bool resultado = false;
@@ -83,70 +148,6 @@ namespace _1W1_GRUPO2_PARTE3.DATOS
                 }
             }
             return resultado;
-        }
-        public bool EditarFacturas(List<Parametro> l)
-        {
-            int afectadas = DBHelper.ObtenerInstancia().Actualizar("SP_EDITAR_FACTURAS", l);
-            if (afectadas > 0)
-            {
-                return true;
-            }
-            else
-            { return false; }
-        }
-
-        public bool EliminarFactura(int id)
-        {
-            List<Parametro> lista = new List<Parametro> { new Parametro("@id", id) };
-            int afectadas = DBHelper.ObtenerInstancia().Actualizar("SP_eliminar_factura", lista);
-            if (afectadas > 0)
-            {
-                return true;
-            }
-            else
-            { return false; }
-        }
-
-        public DataTable TraerFacturas(string nom, string ape)
-        {
-            List<Parametro> list = new List<Parametro>();
-            list.Add(new Parametro("@nom", nom));
-            list.Add(new Parametro("@ape", ape));
-            DataTable tabla = DBHelper.ObtenerInstancia().Consultar(@"sp_cargar_factura",list);
-            return tabla;
-        }
-
-        public DataTable EjecutarIngresosXDia(DateTime diadesde,DateTime diahasta)
-        {
-            List<Parametro> parametros = new List<Parametro>();
-            parametros.Add(new Parametro("@diadesde", diadesde));
-            parametros.Add(new Parametro("@diahasta", diahasta));
-            return DBHelper.ObtenerInstancia().Consultar("SP_INGRESOS_POR_DIA",parametros);
-        }
-
-        public DataTable TraerIdUsuario(string usuario)
-        {
-            List<Parametro> parametros = new List<Parametro>();
-            parametros.Add(new Parametro("@usuario", usuario));
-            DataTable table=new DataTable();
-            table= DBHelper.ObtenerInstancia().Consultar("SP_traer_id_cliente",parametros);
-            return table;
-        }
-
-        public DataTable TraerMedioPago(string nt)
-        {
-            DataTable tabla=new DataTable();
-            tabla=DBHelper.ObtenerInstancia().ConsultarTabla(nt);
-            return tabla;
-        }
-
-        public DataTable VerificarMail(string usuario)
-        {
-            List<Parametro> parametros = new List<Parametro>();
-            parametros.Add(new Parametro("@mail", usuario));
-            DataTable tabla = DBHelper.ObtenerInstancia().Consultar("SP_VERIFICAR_MAIL", parametros);
-                return tabla;
-            
         }
     }
 }

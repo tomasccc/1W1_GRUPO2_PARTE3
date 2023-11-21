@@ -14,7 +14,9 @@ namespace _1W1_GRUPO2_PARTE3.ENTIDADES
         public string apellido { get; set; }
         public int idFactura { get; set; }
         public int id_medio_pago { get; set; }
+        public string medio_pago { get; set; }
         public int tipoVenta { get; set; }
+        public string tipoVentadesc { get; set; }
         public DateTime fecha { get; set; }
         public int id_cliente { get; set; }
 

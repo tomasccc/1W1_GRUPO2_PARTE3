@@ -45,18 +45,18 @@ namespace _1W1_GRUPO2_PARTE3.SERVICIO
             return fdao.EliminarFactura(id);
         }
 
-        public List<Facturas> TraerFacturas(string nom,string ape)
+        public List<Facturas> TraerFacturas(string nom, string ape)
         {
-            List<Facturas> lstfacturas=new List<Facturas>();
-            DataTable tabla= fdao.TraerFacturas(nom,ape);
-            foreach(DataRow dr in tabla.Rows)
+            List<Facturas> lstfacturas = new List<Facturas>();
+            DataTable tabla = fdao.TraerFacturas(nom, ape);
+            foreach (DataRow dr in tabla.Rows)
             {
-                Facturas f=new Facturas();
+                Facturas f = new Facturas();
                 f.nombre = dr["nombre"].ToString();
-                f.apellido = dr["apellido"].ToString() ;
-                f.idFactura =Convert.ToInt32( dr["id_factura"]);
-                f.id_medio_pago = Convert.ToInt32(dr["id_medio_pago"]);
-                f.tipoVenta = Convert.ToInt32(dr["tipo_venta"]);
+                f.apellido = dr["apellido"].ToString();
+                f.tipoVentadesc = (dr["tipo_venta"].ToString());
+                f.medio_pago = dr["id_medio_pago"].ToString();
+                f.idFactura = Convert.ToInt32(dr["id_factura"]);
                 f.fecha = Convert.ToDateTime(dr["fecha"]);
                 lstfacturas.Add(f);
             }

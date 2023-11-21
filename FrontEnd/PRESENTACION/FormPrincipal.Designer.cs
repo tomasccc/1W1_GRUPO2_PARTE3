@@ -39,14 +39,14 @@
             PicTrols3 = new PictureBox();
             PicMonja = new PictureBox();
             PicSpiderman = new PictureBox();
-            panProfesor = new Panel();
+            pnlProfesor = new Panel();
             Profesorr = new Label();
             label2 = new Label();
-            Integrantes = new Panel();
-            label1 = new Label();
+            pnlIntegrantes = new Panel();
+            lblIntegrantes = new Label();
             subMenuAcercaDe = new Panel();
-            button3 = new Button();
-            button2 = new Button();
+            btnProfesor = new Button();
+            btnIntegrantes = new Button();
             button1 = new Button();
             subMenuTransaccion = new Panel();
             btnFactura = new Button();
@@ -56,39 +56,49 @@
             btnSalir = new Button();
             subMenuReportes = new Panel();
             btnRegistros = new Button();
+            picMaximizar = new PictureBox();
             panel2 = new Panel();
+            picPerfil = new PictureBox();
+            picGuardar = new PictureBox();
+            picMinimizar = new PictureBox();
+            SalirClickk = new PictureBox();
             clickRestaurar = new PictureBox();
             clickMaximizar = new PictureBox();
             ClickMinimizar = new PictureBox();
             ClickCerrar = new PictureBox();
             panel3 = new Panel();
+            pictureBox2 = new PictureBox();
             btnConsultas = new Button();
             btnArchivo = new Button();
             btnAcercaDe = new Button();
             btnReportes = new Button();
             btnTransaccion = new Button();
             btnSoporte = new Button();
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             pnlConsultas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PicLJDH).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PicTrols3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PicMonja).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PicSpiderman).BeginInit();
-            panProfesor.SuspendLayout();
-            Integrantes.SuspendLayout();
+            pnlProfesor.SuspendLayout();
+            pnlIntegrantes.SuspendLayout();
             subMenuAcercaDe.SuspendLayout();
             subMenuTransaccion.SuspendLayout();
             subMenuSoporte.SuspendLayout();
             subMenuArchivo.SuspendLayout();
             subMenuReportes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picMaximizar).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picPerfil).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picGuardar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picMinimizar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SalirClickk).BeginInit();
             ((System.ComponentModel.ISupportInitialize)clickRestaurar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)clickMaximizar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ClickMinimizar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ClickCerrar).BeginInit();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -99,8 +109,8 @@
             panel1.Controls.Add(PicTrols3);
             panel1.Controls.Add(PicMonja);
             panel1.Controls.Add(PicSpiderman);
-            panel1.Controls.Add(panProfesor);
-            panel1.Controls.Add(Integrantes);
+            panel1.Controls.Add(pnlProfesor);
+            panel1.Controls.Add(pnlIntegrantes);
             panel1.Controls.Add(subMenuAcercaDe);
             panel1.Controls.Add(subMenuTransaccion);
             panel1.Controls.Add(subMenuSoporte);
@@ -108,7 +118,7 @@
             panel1.Controls.Add(subMenuReportes);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(4, 4, 4, 4);
+            panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
             panel1.Size = new Size(1213, 591);
             panel1.TabIndex = 0;
@@ -121,8 +131,8 @@
             pnlConsultas.Controls.Add(btnIngresoLapsoDias);
             pnlConsultas.Controls.Add(btnPeliculasVistas);
             pnlConsultas.Controls.Add(btnClienteMedio);
-            pnlConsultas.Location = new Point(246, 465);
-            pnlConsultas.Margin = new Padding(4, 4, 4, 4);
+            pnlConsultas.Location = new Point(250, 394);
+            pnlConsultas.Margin = new Padding(4);
             pnlConsultas.Name = "pnlConsultas";
             pnlConsultas.Size = new Size(174, 113);
             pnlConsultas.TabIndex = 11;
@@ -136,7 +146,7 @@
             btnFuncionHoraDia.Font = new Font("Microsoft Sans Serif", 8.249999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             btnFuncionHoraDia.ForeColor = SystemColors.ButtonShadow;
             btnFuncionHoraDia.Location = new Point(0, 88);
-            btnFuncionHoraDia.Margin = new Padding(4, 4, 4, 4);
+            btnFuncionHoraDia.Margin = new Padding(4);
             btnFuncionHoraDia.Name = "btnFuncionHoraDia";
             btnFuncionHoraDia.Size = new Size(169, 21);
             btnFuncionHoraDia.TabIndex = 12;
@@ -151,8 +161,8 @@
             btnIngresoLapsoDias.FlatStyle = FlatStyle.Flat;
             btnIngresoLapsoDias.Font = new Font("Microsoft Sans Serif", 8.249999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             btnIngresoLapsoDias.ForeColor = SystemColors.ButtonShadow;
-            btnIngresoLapsoDias.Location = new Point(1, 57);
-            btnIngresoLapsoDias.Margin = new Padding(4, 4, 4, 4);
+            btnIngresoLapsoDias.Location = new Point(0, 59);
+            btnIngresoLapsoDias.Margin = new Padding(4);
             btnIngresoLapsoDias.Name = "btnIngresoLapsoDias";
             btnIngresoLapsoDias.Size = new Size(169, 21);
             btnIngresoLapsoDias.TabIndex = 11;
@@ -168,7 +178,7 @@
             btnPeliculasVistas.Font = new Font("Microsoft Sans Serif", 8.249999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             btnPeliculasVistas.ForeColor = SystemColors.ButtonShadow;
             btnPeliculasVistas.Location = new Point(0, 30);
-            btnPeliculasVistas.Margin = new Padding(4, 4, 4, 4);
+            btnPeliculasVistas.Margin = new Padding(4);
             btnPeliculasVistas.Name = "btnPeliculasVistas";
             btnPeliculasVistas.Size = new Size(169, 21);
             btnPeliculasVistas.TabIndex = 10;
@@ -184,7 +194,7 @@
             btnClienteMedio.Font = new Font("Microsoft Sans Serif", 8.249999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             btnClienteMedio.ForeColor = SystemColors.ButtonShadow;
             btnClienteMedio.Location = new Point(0, 4);
-            btnClienteMedio.Margin = new Padding(4, 4, 4, 4);
+            btnClienteMedio.Margin = new Padding(4);
             btnClienteMedio.Name = "btnClienteMedio";
             btnClienteMedio.Size = new Size(169, 21);
             btnClienteMedio.TabIndex = 8;
@@ -240,17 +250,17 @@
             PicSpiderman.TabStop = false;
             PicSpiderman.Click += PicSpiderman_Click;
             // 
-            // panProfesor
+            // pnlProfesor
             // 
-            panProfesor.BackColor = Color.FromArgb(64, 0, 0);
-            panProfesor.Controls.Add(Profesorr);
-            panProfesor.Controls.Add(label2);
-            panProfesor.Location = new Point(493, 554);
-            panProfesor.Margin = new Padding(4, 4, 4, 4);
-            panProfesor.Name = "panProfesor";
-            panProfesor.Size = new Size(239, 73);
-            panProfesor.TabIndex = 14;
-            panProfesor.Visible = false;
+            pnlProfesor.BackColor = Color.FromArgb(64, 0, 0);
+            pnlProfesor.Controls.Add(Profesorr);
+            pnlProfesor.Controls.Add(label2);
+            pnlProfesor.Location = new Point(468, 549);
+            pnlProfesor.Margin = new Padding(4);
+            pnlProfesor.Name = "pnlProfesor";
+            pnlProfesor.Size = new Size(197, 44);
+            pnlProfesor.TabIndex = 14;
+            pnlProfesor.Visible = false;
             // 
             // Profesorr
             // 
@@ -275,72 +285,74 @@
             label2.Size = new Size(0, 13);
             label2.TabIndex = 0;
             // 
-            // Integrantes
+            // pnlIntegrantes
             // 
-            Integrantes.BackColor = Color.FromArgb(64, 0, 0);
-            Integrantes.Controls.Add(label1);
-            Integrantes.Location = new Point(493, 484);
-            Integrantes.Margin = new Padding(4, 4, 4, 4);
-            Integrantes.Name = "Integrantes";
-            Integrantes.Size = new Size(388, 68);
-            Integrantes.TabIndex = 13;
-            Integrantes.Visible = false;
+            pnlIntegrantes.BackColor = Color.FromArgb(64, 0, 0);
+            pnlIntegrantes.Controls.Add(lblIntegrantes);
+            pnlIntegrantes.Location = new Point(468, 499);
+            pnlIntegrantes.Margin = new Padding(4);
+            pnlIntegrantes.Name = "pnlIntegrantes";
+            pnlIntegrantes.Size = new Size(324, 47);
+            pnlIntegrantes.TabIndex = 13;
+            pnlIntegrantes.Visible = false;
             // 
-            // label1
+            // lblIntegrantes
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 8.249999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ButtonShadow;
-            label1.Location = new Point(17, 10);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(302, 39);
-            label1.TabIndex = 0;
-            label1.Text = "- Caruso Tomas (405310)  - Nuñez Isaí(405502)\r\n- Ghersi Franco (405774)  - Gomez Eugenio(406049)\r\n- Gianoli Bruno (114373) - Luna Joaquin(405835";
-            label1.Click += label1_Click;
+            lblIntegrantes.AutoSize = true;
+            lblIntegrantes.Font = new Font("Microsoft Sans Serif", 8.249999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblIntegrantes.ForeColor = SystemColors.ButtonShadow;
+            lblIntegrantes.Location = new Point(4, 0);
+            lblIntegrantes.Margin = new Padding(4, 0, 4, 0);
+            lblIntegrantes.Name = "lblIntegrantes";
+            lblIntegrantes.Size = new Size(302, 39);
+            lblIntegrantes.TabIndex = 0;
+            lblIntegrantes.Text = "- Caruso Tomas (405310)  - Nuñez Isaí(405502)\r\n- Ghersi Franco (405774)  - Gomez Eugenio(406049)\r\n- Gianoli Bruno (114373) - Luna Joaquin(405835";
+            lblIntegrantes.Click += label1_Click;
             // 
             // subMenuAcercaDe
             // 
             subMenuAcercaDe.BackColor = Color.FromArgb(64, 0, 0);
-            subMenuAcercaDe.Controls.Add(button3);
-            subMenuAcercaDe.Controls.Add(button2);
+            subMenuAcercaDe.Controls.Add(btnProfesor);
+            subMenuAcercaDe.Controls.Add(btnIntegrantes);
             subMenuAcercaDe.Controls.Add(button1);
-            subMenuAcercaDe.Location = new Point(246, 469);
-            subMenuAcercaDe.Margin = new Padding(4, 4, 4, 4);
+            subMenuAcercaDe.Location = new Point(250, 511);
+            subMenuAcercaDe.Margin = new Padding(4);
             subMenuAcercaDe.Name = "subMenuAcercaDe";
-            subMenuAcercaDe.Size = new Size(239, 128);
+            subMenuAcercaDe.Size = new Size(211, 95);
             subMenuAcercaDe.TabIndex = 10;
             subMenuAcercaDe.Visible = false;
             // 
-            // button3
+            // btnProfesor
             // 
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Microsoft Sans Serif", 8.249999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            button3.ForeColor = SystemColors.ButtonShadow;
-            button3.Location = new Point(4, 92);
-            button3.Margin = new Padding(4, 4, 4, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(206, 28);
-            button3.TabIndex = 9;
-            button3.Text = "Profesor";
-            button3.UseVisualStyleBackColor = true;
+            btnProfesor.FlatAppearance.BorderSize = 0;
+            btnProfesor.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnProfesor.FlatStyle = FlatStyle.Flat;
+            btnProfesor.Font = new Font("Microsoft Sans Serif", 8.249999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            btnProfesor.ForeColor = SystemColors.ButtonShadow;
+            btnProfesor.Location = new Point(0, 57);
+            btnProfesor.Margin = new Padding(4);
+            btnProfesor.Name = "btnProfesor";
+            btnProfesor.Size = new Size(206, 28);
+            btnProfesor.TabIndex = 9;
+            btnProfesor.Text = "Profesor";
+            btnProfesor.UseVisualStyleBackColor = true;
+            btnProfesor.Click += btnProfesor_Click_1;
             // 
-            // button2
+            // btnIntegrantes
             // 
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Microsoft Sans Serif", 8.249999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.ButtonShadow;
-            button2.Location = new Point(-4, 56);
-            button2.Margin = new Padding(4, 4, 4, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(210, 28);
-            button2.TabIndex = 8;
-            button2.Text = "Alumnos integrantes";
-            button2.UseVisualStyleBackColor = true;
+            btnIntegrantes.FlatAppearance.BorderSize = 0;
+            btnIntegrantes.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnIntegrantes.FlatStyle = FlatStyle.Flat;
+            btnIntegrantes.Font = new Font("Microsoft Sans Serif", 8.249999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            btnIntegrantes.ForeColor = SystemColors.ButtonShadow;
+            btnIntegrantes.Location = new Point(0, 26);
+            btnIntegrantes.Margin = new Padding(4);
+            btnIntegrantes.Name = "btnIntegrantes";
+            btnIntegrantes.Size = new Size(210, 28);
+            btnIntegrantes.TabIndex = 8;
+            btnIntegrantes.Text = "Alumnos integrantes";
+            btnIntegrantes.UseVisualStyleBackColor = true;
+            btnIntegrantes.Click += btnIntegrantes_Click_1;
             // 
             // button1
             // 
@@ -349,20 +361,21 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Microsoft Sans Serif", 8.249999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             button1.ForeColor = SystemColors.ButtonShadow;
-            button1.Location = new Point(0, 6);
-            button1.Margin = new Padding(4, 4, 4, 4);
+            button1.Location = new Point(4, 0);
+            button1.Margin = new Padding(4);
             button1.Name = "button1";
-            button1.Size = new Size(210, 44);
+            button1.Size = new Size(207, 28);
             button1.TabIndex = 7;
             button1.Text = "Trabajo Practico Integrador";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // subMenuTransaccion
             // 
             subMenuTransaccion.BackColor = Color.FromArgb(64, 0, 0);
             subMenuTransaccion.Controls.Add(btnFactura);
-            subMenuTransaccion.Location = new Point(246, 370);
-            subMenuTransaccion.Margin = new Padding(4, 4, 4, 4);
+            subMenuTransaccion.Location = new Point(246, 299);
+            subMenuTransaccion.Margin = new Padding(4);
             subMenuTransaccion.Name = "subMenuTransaccion";
             subMenuTransaccion.Size = new Size(195, 40);
             subMenuTransaccion.TabIndex = 12;
@@ -376,7 +389,7 @@
             btnFactura.Font = new Font("Microsoft Sans Serif", 8.249999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             btnFactura.ForeColor = SystemColors.ButtonShadow;
             btnFactura.Location = new Point(0, 4);
-            btnFactura.Margin = new Padding(4, 4, 4, 4);
+            btnFactura.Margin = new Padding(4);
             btnFactura.Name = "btnFactura";
             btnFactura.Size = new Size(192, 37);
             btnFactura.TabIndex = 7;
@@ -388,8 +401,8 @@
             // 
             subMenuSoporte.BackColor = Color.FromArgb(64, 0, 0);
             subMenuSoporte.Controls.Add(btnClientes);
-            subMenuSoporte.Location = new Point(246, 323);
-            subMenuSoporte.Margin = new Padding(4, 4, 4, 4);
+            subMenuSoporte.Location = new Point(246, 252);
+            subMenuSoporte.Margin = new Padding(4);
             subMenuSoporte.Name = "subMenuSoporte";
             subMenuSoporte.Size = new Size(195, 40);
             subMenuSoporte.TabIndex = 12;
@@ -403,7 +416,7 @@
             btnClientes.Font = new Font("Microsoft Sans Serif", 8.249999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             btnClientes.ForeColor = SystemColors.ButtonShadow;
             btnClientes.Location = new Point(0, 6);
-            btnClientes.Margin = new Padding(4, 4, 4, 4);
+            btnClientes.Margin = new Padding(4);
             btnClientes.Name = "btnClientes";
             btnClientes.Size = new Size(195, 28);
             btnClientes.TabIndex = 7;
@@ -415,8 +428,8 @@
             // 
             subMenuArchivo.BackColor = Color.FromArgb(64, 0, 0);
             subMenuArchivo.Controls.Add(btnSalir);
-            subMenuArchivo.Location = new Point(246, 283);
-            subMenuArchivo.Margin = new Padding(4, 4, 4, 4);
+            subMenuArchivo.Location = new Point(246, 212);
+            subMenuArchivo.Margin = new Padding(4);
             subMenuArchivo.Name = "subMenuArchivo";
             subMenuArchivo.Size = new Size(192, 34);
             subMenuArchivo.TabIndex = 12;
@@ -430,7 +443,7 @@
             btnSalir.Font = new Font("Microsoft Sans Serif", 8.249999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             btnSalir.ForeColor = SystemColors.ButtonShadow;
             btnSalir.Location = new Point(0, 0);
-            btnSalir.Margin = new Padding(4, 4, 4, 4);
+            btnSalir.Margin = new Padding(4);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(192, 30);
             btnSalir.TabIndex = 7;
@@ -442,8 +455,8 @@
             // 
             subMenuReportes.BackColor = Color.FromArgb(64, 0, 0);
             subMenuReportes.Controls.Add(btnRegistros);
-            subMenuReportes.Location = new Point(246, 418);
-            subMenuReportes.Margin = new Padding(4, 4, 4, 4);
+            subMenuReportes.Location = new Point(246, 347);
+            subMenuReportes.Margin = new Padding(4);
             subMenuReportes.Name = "subMenuReportes";
             subMenuReportes.Size = new Size(195, 40);
             subMenuReportes.TabIndex = 9;
@@ -457,7 +470,7 @@
             btnRegistros.Font = new Font("Microsoft Sans Serif", 8.249999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             btnRegistros.ForeColor = SystemColors.ButtonShadow;
             btnRegistros.Location = new Point(0, 4);
-            btnRegistros.Margin = new Padding(4, 4, 4, 4);
+            btnRegistros.Margin = new Padding(4);
             btnRegistros.Name = "btnRegistros";
             btnRegistros.Size = new Size(192, 37);
             btnRegistros.TabIndex = 7;
@@ -465,27 +478,92 @@
             btnRegistros.UseVisualStyleBackColor = true;
             btnRegistros.Click += btnRegistros_Click;
             // 
+            // picMaximizar
+            // 
+            picMaximizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            picMaximizar.Image = (Image)resources.GetObject("picMaximizar.Image");
+            picMaximizar.Location = new Point(1142, 3);
+            picMaximizar.Name = "picMaximizar";
+            picMaximizar.Size = new Size(25, 25);
+            picMaximizar.SizeMode = PictureBoxSizeMode.Zoom;
+            picMaximizar.TabIndex = 6;
+            picMaximizar.TabStop = false;
+            picMaximizar.Click += pictureBox3_Click;
+            // 
             // panel2
             // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.FromArgb(192, 0, 0);
+            panel2.Controls.Add(picPerfil);
+            panel2.Controls.Add(picGuardar);
+            panel2.Controls.Add(picMaximizar);
+            panel2.Controls.Add(picMinimizar);
+            panel2.Controls.Add(SalirClickk);
             panel2.Controls.Add(clickRestaurar);
             panel2.Controls.Add(clickMaximizar);
             panel2.Controls.Add(ClickMinimizar);
             panel2.Controls.Add(ClickCerrar);
             panel2.Location = new Point(0, 0);
-            panel2.Margin = new Padding(4, 4, 4, 4);
+            panel2.Margin = new Padding(4);
             panel2.Name = "panel2";
             panel2.Size = new Size(1213, 43);
             panel2.TabIndex = 10;
             panel2.Paint += panel2_Paint;
             panel2.MouseDown += panel2_MouseDown;
             // 
+            // picPerfil
+            // 
+            picPerfil.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            picPerfil.Image = (Image)resources.GetObject("picPerfil.Image");
+            picPerfil.Location = new Point(1042, 3);
+            picPerfil.Name = "picPerfil";
+            picPerfil.Size = new Size(39, 33);
+            picPerfil.SizeMode = PictureBoxSizeMode.Zoom;
+            picPerfil.TabIndex = 8;
+            picPerfil.TabStop = false;
+            picPerfil.Click += pictureBox5_Click;
+            // 
+            // picGuardar
+            // 
+            picGuardar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            picGuardar.Image = (Image)resources.GetObject("picGuardar.Image");
+            picGuardar.Location = new Point(1101, 3);
+            picGuardar.Name = "picGuardar";
+            picGuardar.Size = new Size(25, 25);
+            picGuardar.SizeMode = PictureBoxSizeMode.Zoom;
+            picGuardar.TabIndex = 7;
+            picGuardar.TabStop = false;
+            picGuardar.Click += pictureBox4_Click;
+            // 
+            // picMinimizar
+            // 
+            picMinimizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            picMinimizar.Image = (Image)resources.GetObject("picMinimizar.Image");
+            picMinimizar.Location = new Point(1142, 3);
+            picMinimizar.Name = "picMinimizar";
+            picMinimizar.Size = new Size(25, 25);
+            picMinimizar.SizeMode = PictureBoxSizeMode.Zoom;
+            picMinimizar.TabIndex = 5;
+            picMinimizar.TabStop = false;
+            picMinimizar.Click += pictureBox2_Click;
+            // 
+            // SalirClickk
+            // 
+            SalirClickk.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            SalirClickk.Image = (Image)resources.GetObject("SalirClickk.Image");
+            SalirClickk.Location = new Point(1185, 3);
+            SalirClickk.Name = "SalirClickk";
+            SalirClickk.Size = new Size(25, 25);
+            SalirClickk.SizeMode = PictureBoxSizeMode.Zoom;
+            SalirClickk.TabIndex = 4;
+            SalirClickk.TabStop = false;
+            SalirClickk.Click += SalirClickk_Click;
+            // 
             // clickRestaurar
             // 
             clickRestaurar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            clickRestaurar.Image = (Image)resources.GetObject("clickRestaurar.Image");
             clickRestaurar.Location = new Point(1372, 4);
-            clickRestaurar.Margin = new Padding(4, 4, 4, 4);
+            clickRestaurar.Margin = new Padding(4);
             clickRestaurar.Name = "clickRestaurar";
             clickRestaurar.Size = new Size(29, 28);
             clickRestaurar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -497,9 +575,8 @@
             // clickMaximizar
             // 
             clickMaximizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            clickMaximizar.Image = (Image)resources.GetObject("clickMaximizar.Image");
             clickMaximizar.Location = new Point(1372, 4);
-            clickMaximizar.Margin = new Padding(4, 4, 4, 4);
+            clickMaximizar.Margin = new Padding(4);
             clickMaximizar.Name = "clickMaximizar";
             clickMaximizar.Size = new Size(29, 28);
             clickMaximizar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -510,9 +587,8 @@
             // ClickMinimizar
             // 
             ClickMinimizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            ClickMinimizar.Image = (Image)resources.GetObject("ClickMinimizar.Image");
             ClickMinimizar.Location = new Point(1336, 4);
-            ClickMinimizar.Margin = new Padding(4, 4, 4, 4);
+            ClickMinimizar.Margin = new Padding(4);
             ClickMinimizar.Name = "ClickMinimizar";
             ClickMinimizar.Size = new Size(29, 28);
             ClickMinimizar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -524,9 +600,8 @@
             // 
             ClickCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             ClickCerrar.Cursor = Cursors.Hand;
-            ClickCerrar.Image = (Image)resources.GetObject("ClickCerrar.Image");
             ClickCerrar.Location = new Point(1407, 4);
-            ClickCerrar.Margin = new Padding(4, 4, 4, 4);
+            ClickCerrar.Margin = new Padding(4);
             ClickCerrar.Name = "ClickCerrar";
             ClickCerrar.Size = new Size(29, 28);
             ClickCerrar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -536,21 +611,32 @@
             // 
             // panel3
             // 
-            panel3.Anchor = AnchorStyles.Left;
+            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel3.BackColor = Color.FromArgb(64, 0, 0);
+            panel3.Controls.Add(pictureBox2);
             panel3.Controls.Add(btnConsultas);
             panel3.Controls.Add(btnArchivo);
             panel3.Controls.Add(btnAcercaDe);
             panel3.Controls.Add(btnReportes);
             panel3.Controls.Add(btnTransaccion);
             panel3.Controls.Add(btnSoporte);
-            panel3.Controls.Add(pictureBox1);
             panel3.Location = new Point(0, 0);
-            panel3.Margin = new Padding(4, 4, 4, 4);
+            panel3.Margin = new Padding(4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(238, 570);
+            panel3.Size = new Size(238, 593);
             panel3.TabIndex = 5;
             panel3.Paint += panel3_Paint;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(0, 43);
+            pictureBox2.Margin = new Padding(4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(238, 161);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 13;
+            pictureBox2.TabStop = false;
             // 
             // btnConsultas
             // 
@@ -559,8 +645,8 @@
             btnConsultas.FlatStyle = FlatStyle.Flat;
             btnConsultas.Font = new Font("Microsoft Sans Serif", 8.249999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             btnConsultas.ForeColor = SystemColors.ButtonShadow;
-            btnConsultas.Location = new Point(3, 466);
-            btnConsultas.Margin = new Padding(4, 4, 4, 4);
+            btnConsultas.Location = new Point(-1, 424);
+            btnConsultas.Margin = new Padding(4);
             btnConsultas.Name = "btnConsultas";
             btnConsultas.Size = new Size(239, 40);
             btnConsultas.TabIndex = 12;
@@ -575,8 +661,8 @@
             btnArchivo.FlatStyle = FlatStyle.Flat;
             btnArchivo.Font = new Font("Microsoft Sans Serif", 8.249999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             btnArchivo.ForeColor = SystemColors.ButtonShadow;
-            btnArchivo.Location = new Point(0, 283);
-            btnArchivo.Margin = new Padding(4, 4, 4, 4);
+            btnArchivo.Location = new Point(-5, 212);
+            btnArchivo.Margin = new Padding(4);
             btnArchivo.Name = "btnArchivo";
             btnArchivo.Size = new Size(239, 40);
             btnArchivo.TabIndex = 11;
@@ -591,8 +677,8 @@
             btnAcercaDe.FlatStyle = FlatStyle.Flat;
             btnAcercaDe.Font = new Font("Microsoft Sans Serif", 8.249999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             btnAcercaDe.ForeColor = SystemColors.ButtonShadow;
-            btnAcercaDe.Location = new Point(-1, 512);
-            btnAcercaDe.Margin = new Padding(4, 4, 4, 4);
+            btnAcercaDe.Location = new Point(-5, 525);
+            btnAcercaDe.Margin = new Padding(4);
             btnAcercaDe.Name = "btnAcercaDe";
             btnAcercaDe.Size = new Size(239, 40);
             btnAcercaDe.TabIndex = 10;
@@ -607,8 +693,8 @@
             btnReportes.FlatStyle = FlatStyle.Flat;
             btnReportes.Font = new Font("Microsoft Sans Serif", 8.249999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             btnReportes.ForeColor = SystemColors.ButtonShadow;
-            btnReportes.Location = new Point(4, 418);
-            btnReportes.Margin = new Padding(4, 4, 4, 4);
+            btnReportes.Location = new Point(-1, 351);
+            btnReportes.Margin = new Padding(4);
             btnReportes.Name = "btnReportes";
             btnReportes.Size = new Size(239, 40);
             btnReportes.TabIndex = 8;
@@ -623,8 +709,8 @@
             btnTransaccion.FlatStyle = FlatStyle.Flat;
             btnTransaccion.Font = new Font("Microsoft Sans Serif", 8.249999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             btnTransaccion.ForeColor = SystemColors.ButtonShadow;
-            btnTransaccion.Location = new Point(0, 370);
-            btnTransaccion.Margin = new Padding(4, 4, 4, 4);
+            btnTransaccion.Location = new Point(-5, 299);
+            btnTransaccion.Margin = new Padding(4);
             btnTransaccion.Name = "btnTransaccion";
             btnTransaccion.Size = new Size(239, 40);
             btnTransaccion.TabIndex = 4;
@@ -639,25 +725,14 @@
             btnSoporte.FlatStyle = FlatStyle.Flat;
             btnSoporte.Font = new Font("Microsoft Sans Serif", 8.249999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             btnSoporte.ForeColor = SystemColors.ButtonShadow;
-            btnSoporte.Location = new Point(0, 323);
-            btnSoporte.Margin = new Padding(4, 4, 4, 4);
+            btnSoporte.Location = new Point(-5, 252);
+            btnSoporte.Margin = new Padding(4);
             btnSoporte.Name = "btnSoporte";
             btnSoporte.Size = new Size(239, 40);
             btnSoporte.TabIndex = 1;
             btnSoporte.Text = "Soporte";
             btnSoporte.UseVisualStyleBackColor = true;
             btnSoporte.Click += btnSoporte_Click;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-1, 51);
-            pictureBox1.Margin = new Padding(4, 4, 4, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(239, 232);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // FormPrincipal
             // 
@@ -668,7 +743,7 @@
             Controls.Add(panel3);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "FormPrincipal";
             Text = "FormPrincipal";
             panel1.ResumeLayout(false);
@@ -677,22 +752,27 @@
             ((System.ComponentModel.ISupportInitialize)PicTrols3).EndInit();
             ((System.ComponentModel.ISupportInitialize)PicMonja).EndInit();
             ((System.ComponentModel.ISupportInitialize)PicSpiderman).EndInit();
-            panProfesor.ResumeLayout(false);
-            panProfesor.PerformLayout();
-            Integrantes.ResumeLayout(false);
-            Integrantes.PerformLayout();
+            pnlProfesor.ResumeLayout(false);
+            pnlProfesor.PerformLayout();
+            pnlIntegrantes.ResumeLayout(false);
+            pnlIntegrantes.PerformLayout();
             subMenuAcercaDe.ResumeLayout(false);
             subMenuTransaccion.ResumeLayout(false);
             subMenuSoporte.ResumeLayout(false);
             subMenuArchivo.ResumeLayout(false);
             subMenuReportes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picMaximizar).EndInit();
             panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picPerfil).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picGuardar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picMinimizar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SalirClickk).EndInit();
             ((System.ComponentModel.ISupportInitialize)clickRestaurar).EndInit();
             ((System.ComponentModel.ISupportInitialize)clickMaximizar).EndInit();
             ((System.ComponentModel.ISupportInitialize)ClickMinimizar).EndInit();
             ((System.ComponentModel.ISupportInitialize)ClickCerrar).EndInit();
             panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -705,7 +785,6 @@
         private PictureBox ClickMinimizar;
         private PictureBox ClickCerrar;
         private PictureBox clickRestaurar;
-        private PictureBox pictureBox1;
         private Button btnSoporte;
         private Button btnReportes;
         private Button btnTransaccion;
@@ -719,13 +798,13 @@
         private Button btnClientes;
         private Panel subMenuTransaccion;
         private Button btnFactura;
-        private Panel Integrantes;
+        private Panel pnlIntegrantes;
         private Panel subMenuAcercaDe;
-        private Button button3;
-        private Button button2;
+        private Button btnProfesor;
+        private Button btnIntegrantes;
         private Button button1;
-        private Label label1;
-        private Panel panProfesor;
+        private Label lblIntegrantes;
+        private Panel pnlProfesor;
         private Label label2;
         private Label Profesorr;
         private PictureBox PicLJDH;
@@ -738,5 +817,11 @@
         private Button btnFuncionHoraDia;
         private Button btnIngresoLapsoDias;
         private Button btnPeliculasVistas;
+        private PictureBox SalirClickk;
+        private PictureBox picMaximizar;
+        private PictureBox picGuardar;
+        private PictureBox picMinimizar;
+        private PictureBox picPerfil;
+        private PictureBox pictureBox2;
     }
 }

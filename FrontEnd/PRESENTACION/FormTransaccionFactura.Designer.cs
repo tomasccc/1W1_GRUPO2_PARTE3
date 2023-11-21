@@ -43,9 +43,6 @@
             Colmediopago = new DataGridViewTextBoxColumn();
             Coltipoventa = new DataGridViewTextBoxColumn();
             Fecha = new DataGridViewTextBoxColumn();
-            ColAcciones = new DataGridViewButtonColumn();
-            Acciones1 = new DataGridViewButtonColumn();
-            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DGVClientes).BeginInit();
             SuspendLayout();
@@ -128,7 +125,7 @@
             DGVClientes.AllowUserToAddRows = false;
             DGVClientes.AllowUserToDeleteRows = false;
             DGVClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGVClientes.Columns.AddRange(new DataGridViewColumn[] { colID, ColNombre, ColApellido, Colidfactura, Colmediopago, Coltipoventa, Fecha, ColAcciones, Acciones1 });
+            DGVClientes.Columns.AddRange(new DataGridViewColumn[] { colID, ColNombre, ColApellido, Colidfactura, Colmediopago, Coltipoventa, Fecha });
             DGVClientes.Location = new Point(341, 10);
             DGVClientes.Margin = new Padding(3, 4, 3, 4);
             DGVClientes.Name = "DGVClientes";
@@ -195,43 +192,12 @@
             Fecha.ReadOnly = true;
             Fecha.Width = 150;
             // 
-            // ColAcciones
-            // 
-            ColAcciones.HeaderText = "";
-            ColAcciones.MinimumWidth = 8;
-            ColAcciones.Name = "ColAcciones";
-            ColAcciones.ReadOnly = true;
-            ColAcciones.Width = 70;
-            // 
-            // Acciones1
-            // 
-            Acciones1.HeaderText = "";
-            Acciones1.MinimumWidth = 8;
-            Acciones1.Name = "Acciones1";
-            Acciones1.ReadOnly = true;
-            Acciones1.Resizable = DataGridViewTriState.True;
-            Acciones1.SortMode = DataGridViewColumnSortMode.Automatic;
-            Acciones1.Width = 150;
-            // 
-            // button1
-            // 
-            button1.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            button1.Location = new Point(71, 354);
-            button1.Margin = new Padding(4);
-            button1.Name = "button1";
-            button1.Size = new Size(99, 30);
-            button1.TabIndex = 30;
-            button1.Text = "Regresar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // FormTransaccionFactura
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 0, 0);
             ClientSize = new Size(1003, 519);
-            Controls.Add(button1);
             Controls.Add(btnRegresar);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
@@ -253,23 +219,20 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnRegresar;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtapellido;
-        private System.Windows.Forms.TextBox txtnombre;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridView DGVClientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColApellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Colidfactura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Colmediopago;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Coltipoventa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewButtonColumn ColAcciones;
-        private System.Windows.Forms.DataGridViewButtonColumn Acciones1;
-        private Button button1;
+        private Button btnRegresar;
+        private PictureBox pictureBox1;
+        private Label label1;
+        private Label label2;
+        private TextBox txtapellido;
+        private TextBox txtnombre;
+        private Button btnBuscar;
+        private DataGridView DGVClientes;
+        private DataGridViewTextBoxColumn colID;
+        private DataGridViewTextBoxColumn ColNombre;
+        private DataGridViewTextBoxColumn ColApellido;
+        private DataGridViewTextBoxColumn Colidfactura;
+        private DataGridViewTextBoxColumn Colmediopago;
+        private DataGridViewTextBoxColumn Coltipoventa;
+        private DataGridViewTextBoxColumn Fecha;
     }
 }

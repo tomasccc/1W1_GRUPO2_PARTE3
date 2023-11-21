@@ -146,7 +146,7 @@
             // 
             cboHorario.Enabled = false;
             cboHorario.FormattingEnabled = true;
-            cboHorario.Location = new Point(90, 98);
+            cboHorario.Location = new Point(90, 93);
             cboHorario.Margin = new Padding(4, 3, 4, 3);
             cboHorario.Name = "cboHorario";
             cboHorario.Size = new Size(156, 23);

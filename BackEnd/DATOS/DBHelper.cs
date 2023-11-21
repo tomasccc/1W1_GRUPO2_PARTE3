@@ -19,7 +19,7 @@ internal class DBHelper
     private SqlConnection conexion;
     private SqlCommand comando;
 
-    private string cadena = "Data Source=DESKTOP-KFQ7MV9\\SQLEXPRESS;Initial Catalog=cine11;Integrated Security=True";
+    private string cadena = "Data Source=DESKTOP-KFQ7MV9\\SQLEXPRESS;Initial Catalog=cine12;Integrated Security=True";
     private static DBHelper instancia;
 
 
