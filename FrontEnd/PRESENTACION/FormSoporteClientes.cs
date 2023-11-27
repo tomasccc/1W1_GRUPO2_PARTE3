@@ -59,10 +59,10 @@ namespace FrontEnd.PRESENTACION
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             DGVClientes.Rows.Clear();
-           
+
             BuscarClientes();
 
-            
+
         }
 
         private async void BuscarClientes()
@@ -85,7 +85,7 @@ namespace FrontEnd.PRESENTACION
             {
                 return;
             }
-            clientesAusar=clientes.ToList();
+            clientesAusar = clientes.ToList();
             foreach (Cliente li in clientes)
             {
 
@@ -168,13 +168,30 @@ namespace FrontEnd.PRESENTACION
                             {
                                 MessageBox.Show("El usuario fue borrado de la base de datos con éxito.", "Borrar", MessageBoxButtons.OK);
                                 btnBuscar_Click(sender, e);
-                            }else
+                            }
+                            else
                                 MessageBox.Show("El usuario no pudo ser borrado", "Borrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         else
                             MessageBox.Show("No puede borrar el usuario con el que ha iniciado sesión", "Borrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
+            }
+        }
+
+        private void txtnombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtapellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

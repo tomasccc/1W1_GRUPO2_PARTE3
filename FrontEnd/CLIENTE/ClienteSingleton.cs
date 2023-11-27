@@ -173,13 +173,13 @@ namespace FrontEnd.CLIENTE
             return false;
         }
 
-        public async Task<List<DateTime>> PostCargarComboFechaAsync(string url, CargarFuncionesDTO data)
+        public async Task<List<Funcion>> PostCargarComboFechaAsync(string url, CargarFuncionesDTO data)
         {
             HttpResponseMessage response = await client.PostAsJsonAsync(url, data);
             if (response.IsSuccessStatusCode)
             {
                 string jsonResponse = await response.Content.ReadAsStringAsync();
-                List<DateTime> result = JsonConvert.DeserializeObject<List<DateTime>>(jsonResponse);
+                List<Funcion> result = JsonConvert.DeserializeObject<List<Funcion>>(jsonResponse);
                 return result;
             }
             return null;
@@ -233,16 +233,28 @@ namespace FrontEnd.CLIENTE
             return null;
         }
 
-        public async Task<bool> PostGrabarFacturaAsync(string url, FacturaGrabarDTO data)
+        public async Task<int> PostGrabarFacturaAsync(string url, FacturaGrabarDTO data)
         {
             HttpResponseMessage response = await client.PostAsJsonAsync(url, data);
             if (response.IsSuccessStatusCode)
             {
                 string jsonResponse = await response.Content.ReadAsStringAsync();
-                bool result = JsonConvert.DeserializeObject<bool>(jsonResponse);
+                int result = JsonConvert.DeserializeObject<int>(jsonResponse);
                 return result;
             }
-            return false;
+            return 0;
+        }
+
+        public async Task<List<string>> PostCargarTiposSalaAsync(string url, object data)
+        {
+            HttpResponseMessage response = await client.PostAsJsonAsync(url, data);
+            if (response.IsSuccessStatusCode)
+            {
+                string jsonResponse = await response.Content.ReadAsStringAsync();
+                List<string> result = JsonConvert.DeserializeObject<List<string>>(jsonResponse);
+                return result;
+            }
+            return null;
         }
 
         public async Task<string> DeleteAsync(string url)

@@ -17,7 +17,7 @@ namespace BackEnd.INTERFACES
 
         List<Cliente> TraerCLientes(List<Parametro> lius);
 
-        List<Funcion> TraerFunciones(int id);
+       // List<Funcion> TraerFunciones(int id);
         bool EditarCliente(List<Parametro> l);
         bool BorrarUsuario(int id);
 

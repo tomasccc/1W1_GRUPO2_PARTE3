@@ -65,7 +65,7 @@ namespace BackEnd.SERVICIO
             return dao.RegistrarCliente(list);
         }
 
-        public List<Funcion> TraerFunciones(int id)
+       /* public List<Funcion> TraerFunciones(int id)
         {
             DataTable dt=dao.TraerFunciones(id);
             List<Funcion> lista=new List<Funcion>();
@@ -85,7 +85,7 @@ namespace BackEnd.SERVICIO
                 lista.Add(funcion);
             }
             return lista;
-        }
+        }*/
 
         public List<Cliente> TraerCLientes(List<Parametro> list)
         {

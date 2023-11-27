@@ -16,6 +16,19 @@ namespace WebApi.Controllers
             gb = new FactoryServicioImp().CrearGestorButacas();
         }
 
+        //con GET
+        [HttpGet("TraerButacas")]
+        public IActionResult GetTraerButacas([FromQuery] TraerButacasDTO c)
+        {
+            if (c == null)
+            {
+                return BadRequest("Se requiere un id_funcion!");
+            }
+
+            return Ok(gb.TraerButacas(c.idfuncion));
+        }
+
+        //con POST
         [HttpPost("TraerButacas")]
         public IActionResult PostTraerButacas(TraerButacasDTO c)
         {

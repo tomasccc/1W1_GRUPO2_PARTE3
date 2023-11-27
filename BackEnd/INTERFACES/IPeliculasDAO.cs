@@ -12,6 +12,9 @@ namespace BackEnd.INTERFACES
     {
         DataTable ConsultarBD(string sp, List<Parametro> a);
         DataTable TraerBD(string sp);
+        DataTable TraerPeliculas(List<Parametro> a);
+        bool BorrarPelicula(int id);
+        bool EditarPelicula(List<Parametro> l);
 
     }
 }

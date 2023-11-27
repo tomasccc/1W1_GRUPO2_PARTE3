@@ -33,6 +33,8 @@
             label1 = new Label();
             btnGenerar = new Button();
             DGVIngresos = new DataGridView();
+            Coldía = new DataGridViewTextBoxColumn();
+            ColIngresos = new DataGridViewTextBoxColumn();
             Id = new DataGridViewTextBoxColumn();
             Día = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
@@ -43,8 +45,6 @@
             label3 = new Label();
             pictureBox1 = new PictureBox();
             btnRegresar = new Button();
-            Coldía = new DataGridViewTextBoxColumn();
-            ColIngresos = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)DGVIngresos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -97,6 +97,22 @@
             DGVIngresos.TabIndex = 3;
             DGVIngresos.CellContentClick += dataGridView1_CellContentClick;
             // 
+            // Coldía
+            // 
+            Coldía.HeaderText = "Día";
+            Coldía.MinimumWidth = 6;
+            Coldía.Name = "Coldía";
+            Coldía.ReadOnly = true;
+            Coldía.Width = 200;
+            // 
+            // ColIngresos
+            // 
+            ColIngresos.HeaderText = "Ingresos Totales";
+            ColIngresos.MinimumWidth = 6;
+            ColIngresos.Name = "ColIngresos";
+            ColIngresos.ReadOnly = true;
+            ColIngresos.Width = 200;
+            // 
             // Id
             // 
             Id.HeaderText = "ID";
@@ -133,6 +149,7 @@
             // 
             // txtTotal
             // 
+            txtTotal.Enabled = false;
             txtTotal.Location = new Point(539, 485);
             txtTotal.Margin = new Padding(3, 4, 3, 4);
             txtTotal.Name = "txtTotal";
@@ -192,22 +209,6 @@
             btnRegresar.Text = "Regresar";
             btnRegresar.UseVisualStyleBackColor = true;
             btnRegresar.Click += btnRegresar_Click;
-            // 
-            // Coldía
-            // 
-            Coldía.HeaderText = "Día";
-            Coldía.MinimumWidth = 6;
-            Coldía.Name = "Coldía";
-            Coldía.ReadOnly = true;
-            Coldía.Width = 200;
-            // 
-            // ColIngresos
-            // 
-            ColIngresos.HeaderText = "Ingresos Totales";
-            ColIngresos.MinimumWidth = 6;
-            ColIngresos.Name = "ColIngresos";
-            ColIngresos.ReadOnly = true;
-            ColIngresos.Width = 200;
             // 
             // FormConsultaIngresos
             // 

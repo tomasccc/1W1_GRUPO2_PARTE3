@@ -19,6 +19,6 @@ namespace _1W1_GRUPO2_PARTE3.ENTIDADES
         bool EditarFactura(List<Parametro> l);
         List<MedioPago> TraerMedioPago(string nt);
         DataTable EjecutarIngresosXDia(DateTime diadesde,DateTime diahasta);
-        bool GrabarFactura(Facturas f);
+        int GrabarFactura(Facturas f);
     }
 }

@@ -25,13 +25,14 @@ internal class DBHelper
 
     /*CONEXIONES DE TODOS:
      * TrustServerCertificate=true
+     * "Data Source=.\\SQLEXPRESS;Initial Catalog=cine19;Integrated Security=True";
      * TOMI= Data Source=DESKTOP-KFQ7MV9\SQLEXPRESS;Initial Catalog=cine;Integrated Security=True
      * ISAI= Data Source=DESKTOP-SUGL625\SQLEXPRESS;Initial Catalog=cine;Integrated Security=True
      * FEfo= Data Source=DESKTOP-CJB4O4H;Initial Catalog=cine;Integrated Security=True
      * EUGE = Data Source=DESKTOP-R20PV8M;Initial Catalog=cine_2;Integrated Security=True
      */
-//    insert into clientes
-//values('fofo','fefe','fofo','3331415','06-02-2020','fofo')
+    //    insert into clientes
+    //values('fofo','fefe','fofo','3331415','06-02-2020','fofo')
     private DBHelper()
     {
         conexion = new SqlConnection(cadena);

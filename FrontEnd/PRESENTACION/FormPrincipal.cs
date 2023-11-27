@@ -15,6 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Timer = System.Windows.Forms.Timer;
 
 namespace FrontEnd.PRESENTACION
 {
@@ -27,6 +28,8 @@ namespace FrontEnd.PRESENTACION
         IGestorPeliculas gp;
         bool esAdmin;
         Cliente cliente;
+        private int contador;
+        private Timer timer;
 
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -45,6 +48,29 @@ namespace FrontEnd.PRESENTACION
             gestorfac = gesfac;
             gestorbut = gb;
             this.gp = gp;
+            contador = 1;
+            btnPeliculas.BringToFront();
+            lblNombre.BringToFront();
+            picMaximizar.SendToBack();
+            picMinimizar.BringToFront();
+            lblNombre.Text = lblNombre.Text.ToString() + " " + c.email + "!";
+            pictureBox2.SendToBack();
+            InicializarTemporizador();
+        }
+
+        private void InicializarTemporizador()
+        {
+            timer = new Timer();
+            timer.Interval = 1000;
+
+            timer.Tick += Time_Tick;
+
+            timer.Start();
+        }
+
+        private void Time_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToString("HH:mm:ss").ToString();
         }
 
         private void ClickCerrar_Click(object sender, EventArgs e)
@@ -76,7 +102,7 @@ namespace FrontEnd.PRESENTACION
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
-            subMenuReportes.Visible = true;
+            subMenuPeliculas.Visible = true;
             subMenuArchivo.Visible = false;
             subMenuSoporte.Visible = false;
             subMenuAcercaDe.Visible = false;
@@ -86,7 +112,7 @@ namespace FrontEnd.PRESENTACION
         }
         private void btnRegistros_Click(object sender, EventArgs e)
         {
-            subMenuReportes.Visible = false;
+            subMenuPeliculas.Visible = false;
             FormReportesRegistros formReportesRegistros = new FormReportesRegistros();
             formReportesRegistros.Show();
         }
@@ -98,7 +124,7 @@ namespace FrontEnd.PRESENTACION
             subMenuArchivo.Visible = true;
             subMenuSoporte.Visible = false;
             subMenuAcercaDe.Visible = false;
-            subMenuReportes.Visible = false;
+            subMenuPeliculas.Visible = false;
             subMenuTransaccion.Visible = false;
             pnlIntegrantes.Visible = false;
             pnlProfesor.Visible = false;
@@ -119,17 +145,21 @@ namespace FrontEnd.PRESENTACION
             subMenuSoporte.Visible = true;
             subMenuAcercaDe.Visible = false;
             subMenuArchivo.Visible = false;
-            subMenuReportes.Visible = false;
+            subMenuPeliculas.Visible = false;
             subMenuTransaccion.Visible = false;
             pnlConsultas.Visible = false;
             pnlIntegrantes.Visible = false;
             pnlProfesor.Visible = false;
+            btnPeliculas.Visible = true;
+            subMenuPeliculas.Visible = true;
         }
         private void btnClientes_Click(object sender, EventArgs e)
         {
             if (esAdmin)
             {
                 subMenuSoporte.Visible = false;
+                btnPeliculas.Visible = false;
+                subMenuPeliculas.Visible = false;
 
                 FormSoporteClientes formSoporteClientes = new FormSoporteClientes(gecliente, cliente);
                 formSoporteClientes.Show();
@@ -147,11 +177,12 @@ namespace FrontEnd.PRESENTACION
             subMenuTransaccion.Visible = true;
             subMenuAcercaDe.Visible = false;
             subMenuArchivo.Visible = false;
-            subMenuReportes.Visible = false;
+            subMenuPeliculas.Visible = false;
             subMenuSoporte.Visible = false;
             pnlConsultas.Visible = false;
             pnlIntegrantes.Visible = false;
             pnlProfesor.Visible = false;
+            PicMonja.SendToBack();
         }
 
         private void btnFactura_Click(object sender, EventArgs e)
@@ -168,7 +199,7 @@ namespace FrontEnd.PRESENTACION
         {
             subMenuAcercaDe.Visible = true;
             subMenuArchivo.Visible = false;
-            subMenuReportes.Visible = false;
+            subMenuPeliculas.Visible = false;
             subMenuSoporte.Visible = false;
             subMenuTransaccion.Visible = false;
             pnlConsultas.Visible = false;
@@ -236,7 +267,7 @@ namespace FrontEnd.PRESENTACION
 
             subMenuAcercaDe.Visible = false;
             subMenuArchivo.Visible = false;
-            subMenuReportes.Visible = false;
+            subMenuPeliculas.Visible = false;
             subMenuSoporte.Visible = false;
             subMenuTransaccion.Visible = false;
             pnlConsultas.Visible = true;
@@ -280,6 +311,7 @@ namespace FrontEnd.PRESENTACION
             picGuardar.BringToFront();
             ReleaseCapture();
             SendMessage(this.Handle, 0x0112, 0xf012, 0);
+
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -319,16 +351,16 @@ namespace FrontEnd.PRESENTACION
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-            clickMaximizar.Visible = false;
-            clickRestaurar.Visible = true;
+            picMaximizar.Visible = false;
+            picMinimizar.Visible = true;
             picMaximizar.BringToFront();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
-            clickMaximizar.Visible = true;
-            clickRestaurar.Visible = false;
+            picMaximizar.Visible = true;
+            picMinimizar.Visible = false;
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -344,6 +376,126 @@ namespace FrontEnd.PRESENTACION
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click_1(object sender, EventArgs e)
+        {
+            if (contador == 1)
+            {
+                PeliLjdh.BringToFront();
+                contador++;
+            }
+            else
+            if (contador == 2)
+            {
+                PeliMisMar.BringToFront();
+                contador++;
+            }
+            else if (contador == 3)
+            {
+                picNapoleon.BringToFront();
+                contador = 1;
+            }
+        }
+
+        private void picNapoleon_Click(object sender, EventArgs e)
+        {
+            int pic = 1;
+        }
+
+        private void PeliLjdh_Click(object sender, EventArgs e)
+        {
+            int pic = 2;
+        }
+
+        private void PeliMisMar_Click(object sender, EventArgs e)
+        {
+            int pic = 3;
+        }
+
+        private void picIzquierda_Click(object sender, EventArgs e)
+        {
+            if (contador == 1)
+            {
+                PeliMisMar.BringToFront();
+                contador = 3;
+
+            }
+            else
+            if (contador == 2)
+            {
+                picNapoleon.BringToFront();
+                contador = 1;
+            }
+            else if (contador == 3)
+            {
+                PeliLjdh.BringToFront();
+
+                contador = 2;
+            }
+        }
+
+        private void btnPeliculas_Click(object sender, EventArgs e)
+        {
+            if (esAdmin)
+            {
+                subMenuSoporte.Visible = false;
+                btnPeliculas.Visible = false;
+                subMenuPeliculas.Visible = false;
+
+                Form_Pelis p = new Form_Pelis(new GestorPeliculas(), new Pelicula());
+                p.ShowDialog();
+            }
+            else
+                MessageBox.Show("Debe ser administrador para tener acceso al soporte de clientes de la aplicación", "Soporte", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (esAdmin)
+            {
+                subMenuSoporte.Visible = false;
+                btnFactura.Visible = false;
+                btnFactura2.Visible = false;
+                subMenuTransaccion.Visible = false;
+
+                FormTransaccionFactura tf = new FormTransaccionFactura(gestorfac);
+                tf.ShowDialog();
+            }
+            else
+                MessageBox.Show("Debe ser administrador para tener acceso a las facturas", "Soporte", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void lblCartelera_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FlechaIzquierda_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNombre_Click(object sender, EventArgs e)
         {
 
         }

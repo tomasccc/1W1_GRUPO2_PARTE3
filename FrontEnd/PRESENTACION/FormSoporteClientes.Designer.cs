@@ -57,46 +57,48 @@
             // btnBuscar
             // 
             btnBuscar.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            btnBuscar.Location = new Point(179, 440);
-            btnBuscar.Margin = new Padding(4);
+            btnBuscar.Location = new Point(205, 587);
+            btnBuscar.Margin = new Padding(5);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(154, 39);
-            btnBuscar.TabIndex = 1;
+            btnBuscar.Size = new Size(176, 52);
+            btnBuscar.TabIndex = 4;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
             btnBuscar.Click += btnBuscar_Click;
             // 
             // txtnombre
             // 
-            txtnombre.Location = new Point(197, 208);
-            txtnombre.Margin = new Padding(4);
+            txtnombre.Location = new Point(225, 277);
+            txtnombre.Margin = new Padding(5);
             txtnombre.Name = "txtnombre";
-            txtnombre.Size = new Size(136, 23);
-            txtnombre.TabIndex = 4;
+            txtnombre.Size = new Size(155, 27);
+            txtnombre.TabIndex = 0;
+            txtnombre.KeyPress += txtnombre_KeyPress;
             // 
             // txtapellido
             // 
-            txtapellido.Location = new Point(197, 238);
-            txtapellido.Margin = new Padding(4);
+            txtapellido.Location = new Point(225, 321);
+            txtapellido.Margin = new Padding(5);
             txtapellido.Name = "txtapellido";
-            txtapellido.Size = new Size(136, 23);
-            txtapellido.TabIndex = 5;
+            txtapellido.Size = new Size(155, 27);
+            txtapellido.TabIndex = 1;
+            txtapellido.KeyPress += txtapellido_KeyPress;
             // 
             // txtemail
             // 
-            txtemail.Location = new Point(197, 272);
-            txtemail.Margin = new Padding(4);
+            txtemail.Location = new Point(225, 363);
+            txtemail.Margin = new Padding(5);
             txtemail.Name = "txtemail";
-            txtemail.Size = new Size(136, 23);
-            txtemail.TabIndex = 6;
+            txtemail.Size = new Size(155, 27);
+            txtemail.TabIndex = 2;
             // 
             // txttel
             // 
-            txttel.Location = new Point(197, 302);
-            txttel.Margin = new Padding(4);
+            txttel.Location = new Point(225, 403);
+            txttel.Margin = new Padding(5);
             txttel.Name = "txttel";
-            txttel.Size = new Size(136, 23);
-            txttel.TabIndex = 7;
+            txttel.Size = new Size(155, 27);
+            txttel.TabIndex = 3;
             txttel.KeyPress += txttel_KeyPress;
             // 
             // label2
@@ -104,10 +106,10 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 9.749999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.ButtonShadow;
-            label2.Location = new Point(116, 212);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(133, 283);
+            label2.Margin = new Padding(5, 0, 5, 0);
             label2.Name = "label2";
-            label2.Size = new Size(62, 16);
+            label2.Size = new Size(74, 20);
             label2.TabIndex = 10;
             label2.Text = "Nombre";
             // 
@@ -116,10 +118,10 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 9.749999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ButtonShadow;
-            label1.Location = new Point(116, 242);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(133, 327);
+            label1.Margin = new Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new Size(65, 16);
+            label1.Size = new Size(76, 20);
             label1.TabIndex = 11;
             label1.Text = "Apellido";
             // 
@@ -128,10 +130,10 @@
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 9.749999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.ButtonShadow;
-            label3.Location = new Point(136, 272);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(155, 363);
+            label3.Margin = new Padding(5, 0, 5, 0);
             label3.Name = "label3";
-            label3.Size = new Size(46, 16);
+            label3.Size = new Size(56, 20);
             label3.TabIndex = 12;
             label3.Text = "Email";
             // 
@@ -140,20 +142,20 @@
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 9.749999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label4.ForeColor = SystemColors.ButtonShadow;
-            label4.Location = new Point(113, 302);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Location = new Point(129, 403);
+            label4.Margin = new Padding(5, 0, 5, 0);
             label4.Name = "label4";
-            label4.Size = new Size(69, 16);
+            label4.Size = new Size(81, 20);
             label4.TabIndex = 13;
             label4.Text = "Telefono";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(122, 4);
-            pictureBox1.Margin = new Padding(4);
+            pictureBox1.Location = new Point(139, 5);
+            pictureBox1.Margin = new Padding(5);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(213, 199);
+            pictureBox1.Size = new Size(243, 265);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 15;
             pictureBox1.TabStop = false;
@@ -161,11 +163,11 @@
             // btnRegresar
             // 
             btnRegresar.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            btnRegresar.Location = new Point(14, 4);
-            btnRegresar.Margin = new Padding(4);
+            btnRegresar.Location = new Point(16, 5);
+            btnRegresar.Margin = new Padding(5);
             btnRegresar.Name = "btnRegresar";
-            btnRegresar.Size = new Size(99, 30);
-            btnRegresar.TabIndex = 16;
+            btnRegresar.Size = new Size(113, 40);
+            btnRegresar.TabIndex = 6;
             btnRegresar.Text = "Regresar";
             btnRegresar.UseVisualStyleBackColor = true;
             btnRegresar.Click += btnRegresar_Click;
@@ -176,13 +178,13 @@
             DGVClientes.AllowUserToDeleteRows = false;
             DGVClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGVClientes.Columns.AddRange(new DataGridViewColumn[] { colID, ColNombre, ColApellido, ColEmail, ColTelefono, ColFechaNacimiento, ColAcciones, Acciones1 });
-            DGVClientes.Location = new Point(360, 40);
-            DGVClientes.Margin = new Padding(4);
+            DGVClientes.Location = new Point(411, 53);
+            DGVClientes.Margin = new Padding(5);
             DGVClientes.Name = "DGVClientes";
             DGVClientes.ReadOnly = true;
             DGVClientes.RowHeadersWidth = 51;
-            DGVClientes.Size = new Size(648, 439);
-            DGVClientes.TabIndex = 0;
+            DGVClientes.Size = new Size(741, 585);
+            DGVClientes.TabIndex = 7;
             DGVClientes.CellContentClick += DGVClientes_CellContentClick;
             // 
             // colID
@@ -255,21 +257,21 @@
             // button1
             // 
             button1.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            button1.Location = new Point(14, 440);
-            button1.Margin = new Padding(4);
+            button1.Location = new Point(16, 587);
+            button1.Margin = new Padding(5);
             button1.Name = "button1";
-            button1.Size = new Size(154, 39);
-            button1.TabIndex = 17;
+            button1.Size = new Size(176, 52);
+            button1.TabIndex = 5;
             button1.Text = "Crear Usuario";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // FormSoporteClientes
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 0, 0);
-            ClientSize = new Size(1067, 519);
+            ClientSize = new Size(1219, 692);
             Controls.Add(button1);
             Controls.Add(btnRegresar);
             Controls.Add(pictureBox1);
@@ -284,7 +286,7 @@
             Controls.Add(btnBuscar);
             Controls.Add(DGVClientes);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4);
+            Margin = new Padding(5);
             Name = "FormSoporteClientes";
             Text = "FormSoporteClientes";
             Load += FormSoporteClientes_Load;

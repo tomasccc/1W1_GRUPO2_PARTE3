@@ -72,36 +72,37 @@ namespace FrontEnd.PRESENTACION
         {
             if (await VerificarMail() || cliente.email == txtemail.Text)
             {
-                    if (Validar())
+                if (Validar())
+                {
+                    string url = "https://localhost:7214/api/Clientes/EditarCliente";
+                    if (txtemail.Text != cliente.email)
                     {
-                        string url = "https://localhost:7214/api/Clientes/EditarCliente";
-                        if (txtemail.Text != cliente.email)
-                        {
-                            cliente.email = txtemail.Text.ToString();
-                        }
-                        cliente.contraseña = txtcontra.Text.ToString();
-                        cliente.nombre = txtnombre.Text.ToString();
-                        cliente.fechanac = dateTimePicker1.Value;
-                        if (txttel.Text == "")
-                        {
-                            cliente.telefono = "";
-                        }
-                        else
-                        {
-                            cliente.telefono = txttel.Text.ToString();
-                        }
-                        cliente.apellido = txtapellido.Text;
-                        bool resultado = await ClienteSingleton.getInstance().PutEditarClienteAsync(url, cliente);
-                        if (resultado)
-                        {
-                            MessageBox.Show("Se editó el cliente con éxito", "Editar", MessageBoxButtons.OK);
-                            this.Close();
-                        }
-                        else
-                            MessageBox.Show("El cliente no pudo ser editado", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        cliente.email = txtemail.Text.ToString();
                     }
-               
-            }else
+                    cliente.contraseña = txtcontra.Text.ToString();
+                    cliente.nombre = txtnombre.Text.ToString();
+                    cliente.fechanac = dateTimePicker1.Value;
+                    if (txttel.Text == "")
+                    {
+                        cliente.telefono = "";
+                    }
+                    else
+                    {
+                        cliente.telefono = txttel.Text.ToString();
+                    }
+                    cliente.apellido = txtapellido.Text;
+                    bool resultado = await ClienteSingleton.getInstance().PutEditarClienteAsync(url, cliente);
+                    if (resultado)
+                    {
+                        MessageBox.Show("Se editó el cliente con éxito", "Editar", MessageBoxButtons.OK);
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show("El cliente no pudo ser editado", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
                 MessageBox.Show("El email que intenta ingresar ya está en uso", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
@@ -141,7 +142,7 @@ namespace FrontEnd.PRESENTACION
                 MessageBox.Show("La contraseña debe tener más de 7 carácteres", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
-            if (!int.TryParse(txttel.Text, out _))
+            if (int.TryParse(txttel.Text, out _))
             {
                 if (txttel.Text != string.Empty)
                 {
@@ -149,12 +150,12 @@ namespace FrontEnd.PRESENTACION
                     return false;
                 }
             }
-           /* bool resultado = Convert.ToBoolean(VerificarMail().Result);
-            if (!resultado && cliente.email != txtemail.Text)
-            {
-                MessageBox.Show("El email que intenta ingresar ya está en uso", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
-            }*/
+            /* bool resultado = Convert.ToBoolean(VerificarMail().Result);
+             if (!resultado && cliente.email != txtemail.Text)
+             {
+                 MessageBox.Show("El email que intenta ingresar ya está en uso", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                 return false;
+             }*/
             return true;
         }
 
@@ -162,11 +163,11 @@ namespace FrontEnd.PRESENTACION
         {
 
             string url = "https://localhost:7214/api/Clientes/VerificarMail";
-            ClienteVerificarMailDTO cveri= new ClienteVerificarMailDTO();
+            ClienteVerificarMailDTO cveri = new ClienteVerificarMailDTO();
             cveri.usuario = txtemail.Text.ToString();
-            bool resultado= await ClienteSingleton.getInstance().PostVerificarMailAsync(url, cveri);
+            bool resultado = await ClienteSingleton.getInstance().PostVerificarMailAsync(url, cveri);
             return resultado;
-        } 
+        }
 
         private void txttel_TextChanged(object sender, EventArgs e)
         {

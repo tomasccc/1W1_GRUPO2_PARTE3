@@ -79,8 +79,9 @@ namespace _1W1_GRUPO2_PARTE3.DATOS
             
         }
 
-        public bool GrabarFactura(Facturas f)
+        public int GrabarFactura(Facturas f)
         {
+            int nro_factura = 0;
             bool resultado = false;
             SqlTransaction trans;
             trans = null;
@@ -106,7 +107,7 @@ namespace _1W1_GRUPO2_PARTE3.DATOS
                 para.Direction = ParameterDirection.Output;
                 comando.Parameters.Add(para);
                 comando.ExecuteNonQuery();
-                int nro_factura = (int)para.Value;
+                nro_factura = (int)para.Value;
 
 
                 SqlCommand cmd1;
@@ -147,7 +148,13 @@ namespace _1W1_GRUPO2_PARTE3.DATOS
 
                 }
             }
-            return resultado;
+
+            if (resultado)
+            {
+                return nro_factura;
+            }
+            else
+                return 0;
         }
     }
 }

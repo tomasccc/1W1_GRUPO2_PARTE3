@@ -35,16 +35,20 @@ namespace BackEnd.SERVICIO
 
         }
 
-        public List<DateTime> TraerFecha(int idpelicula)
+        public List<Funcion> TraerFecha(int idpelicula)
         {
-            List<DateTime> fechas= new List<DateTime>();
+            List<Funcion> f = new List<Funcion>();
             DataTable dt = fDAO.TraerFechas(idpelicula);
             foreach (DataRow r in dt.Rows)
             {
-                DateTime fecha = DateTime.Parse(r["fecha"].ToString());
-                fechas.Add(fecha);
+                Funcion funcion = new Funcion();
+                funcion.Id = (int)r["id_funcion"];
+                funcion.fecha = Convert.ToDateTime(r["fecha"].ToString());
+                funcion.IdtipoSala = (int)r["id_tipo_sala"];
+                funcion.IdSala = (int)r["id_sala"];
+                f.Add(funcion);
             }
-            return fechas;
+            return f;
         }
 
         public List<string> TraerHorario(int idFuncion, string fecha)
@@ -77,6 +81,20 @@ namespace BackEnd.SERVICIO
             }
            
             return id;
+        }
+
+        public List<string> TraerTiposSala(string fecha, string hora)
+        {
+            List<string> strings = new List<string>();
+            List<Parametro> lst = new List<Parametro>();
+            lst.Add(new Parametro("@fec",Convert.ToDateTime(fecha)));
+            lst.Add(new Parametro("@hor",hora));
+            DataTable dt= fDAO.Traer(lst,"SP_CARGAR_TIPOSSALA");
+            foreach (DataRow r in dt.Rows)
+            {
+                strings.Add(r["descripcion"].ToString());
+            }
+            return strings;
         }
     }
 }

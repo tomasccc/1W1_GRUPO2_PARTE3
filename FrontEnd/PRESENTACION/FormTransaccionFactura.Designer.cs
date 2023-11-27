@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTransaccionFactura));
             btnRegresar = new Button();
             pictureBox1 = new PictureBox();
             label1 = new Label();
@@ -51,21 +52,22 @@
             // 
             btnRegresar.BackColor = Color.White;
             btnRegresar.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            btnRegresar.Location = new Point(19, 392);
-            btnRegresar.Margin = new Padding(3, 4, 3, 4);
+            btnRegresar.Location = new Point(22, 523);
+            btnRegresar.Margin = new Padding(3, 5, 3, 5);
             btnRegresar.Name = "btnRegresar";
-            btnRegresar.Size = new Size(153, 39);
-            btnRegresar.TabIndex = 29;
+            btnRegresar.Size = new Size(175, 52);
+            btnRegresar.TabIndex = 3;
             btnRegresar.Text = "Regresar";
             btnRegresar.UseVisualStyleBackColor = false;
             btnRegresar.Click += btnRegresar_Click;
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(114, 10);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(130, 13);
+            pictureBox1.Margin = new Padding(3, 5, 3, 5);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(212, 199);
+            pictureBox1.Size = new Size(242, 265);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 28;
             pictureBox1.TabStop = false;
@@ -75,9 +77,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 9.749999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ButtonShadow;
-            label1.Location = new Point(108, 260);
+            label1.Location = new Point(123, 347);
             label1.Name = "label1";
-            label1.Size = new Size(65, 16);
+            label1.Size = new Size(76, 20);
             label1.TabIndex = 25;
             label1.Text = "Apellido";
             // 
@@ -86,36 +88,38 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 9.749999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.ButtonShadow;
-            label2.Location = new Point(108, 230);
+            label2.Location = new Point(123, 307);
             label2.Name = "label2";
-            label2.Size = new Size(62, 16);
+            label2.Size = new Size(74, 20);
             label2.TabIndex = 24;
             label2.Text = "Nombre";
             // 
             // txtapellido
             // 
-            txtapellido.Location = new Point(191, 256);
-            txtapellido.Margin = new Padding(3, 4, 3, 4);
+            txtapellido.Location = new Point(218, 341);
+            txtapellido.Margin = new Padding(3, 5, 3, 5);
             txtapellido.Name = "txtapellido";
-            txtapellido.Size = new Size(136, 23);
-            txtapellido.TabIndex = 21;
+            txtapellido.Size = new Size(155, 27);
+            txtapellido.TabIndex = 1;
+            txtapellido.KeyPress += txtapellido_KeyPress;
             // 
             // txtnombre
             // 
-            txtnombre.Location = new Point(191, 226);
-            txtnombre.Margin = new Padding(3, 4, 3, 4);
+            txtnombre.Location = new Point(218, 301);
+            txtnombre.Margin = new Padding(3, 5, 3, 5);
             txtnombre.Name = "txtnombre";
-            txtnombre.Size = new Size(136, 23);
-            txtnombre.TabIndex = 20;
+            txtnombre.Size = new Size(155, 27);
+            txtnombre.TabIndex = 0;
+            txtnombre.KeyPress += txtnombre_KeyPress;
             // 
             // btnBuscar
             // 
             btnBuscar.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            btnBuscar.Location = new Point(181, 392);
-            btnBuscar.Margin = new Padding(3, 4, 3, 4);
+            btnBuscar.Location = new Point(207, 523);
+            btnBuscar.Margin = new Padding(3, 5, 3, 5);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(154, 39);
-            btnBuscar.TabIndex = 19;
+            btnBuscar.Size = new Size(176, 52);
+            btnBuscar.TabIndex = 2;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
             btnBuscar.Click += btnBuscar_Click;
@@ -126,13 +130,13 @@
             DGVClientes.AllowUserToDeleteRows = false;
             DGVClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGVClientes.Columns.AddRange(new DataGridViewColumn[] { colID, ColNombre, ColApellido, Colidfactura, Colmediopago, Coltipoventa, Fecha });
-            DGVClientes.Location = new Point(341, 10);
-            DGVClientes.Margin = new Padding(3, 4, 3, 4);
+            DGVClientes.Location = new Point(390, 13);
+            DGVClientes.Margin = new Padding(3, 5, 3, 5);
             DGVClientes.Name = "DGVClientes";
             DGVClientes.ReadOnly = true;
             DGVClientes.RowHeadersWidth = 62;
-            DGVClientes.Size = new Size(647, 431);
-            DGVClientes.TabIndex = 18;
+            DGVClientes.Size = new Size(739, 575);
+            DGVClientes.TabIndex = 4;
             DGVClientes.CellContentClick += DGVClientes_CellContentClick;
             // 
             // colID
@@ -146,58 +150,58 @@
             // 
             // ColNombre
             // 
+            ColNombre.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             ColNombre.HeaderText = "Nombre";
             ColNombre.MinimumWidth = 8;
             ColNombre.Name = "ColNombre";
             ColNombre.ReadOnly = true;
-            ColNombre.Width = 70;
             // 
             // ColApellido
             // 
+            ColApellido.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             ColApellido.HeaderText = "Apellido";
             ColApellido.MinimumWidth = 8;
             ColApellido.Name = "ColApellido";
             ColApellido.ReadOnly = true;
-            ColApellido.Width = 70;
             // 
             // Colidfactura
             // 
+            Colidfactura.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Colidfactura.HeaderText = "Id Factura";
             Colidfactura.MinimumWidth = 8;
             Colidfactura.Name = "Colidfactura";
             Colidfactura.ReadOnly = true;
-            Colidfactura.Width = 70;
             // 
             // Colmediopago
             // 
+            Colmediopago.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Colmediopago.HeaderText = "Medio Pago";
             Colmediopago.MinimumWidth = 8;
             Colmediopago.Name = "Colmediopago";
             Colmediopago.ReadOnly = true;
-            Colmediopago.Width = 70;
             // 
             // Coltipoventa
             // 
+            Coltipoventa.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Coltipoventa.HeaderText = "Tipo de Venta";
             Coltipoventa.MinimumWidth = 8;
             Coltipoventa.Name = "Coltipoventa";
             Coltipoventa.ReadOnly = true;
-            Coltipoventa.Width = 70;
             // 
             // Fecha
             // 
+            Fecha.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Fecha.HeaderText = "Fecha";
             Fecha.MinimumWidth = 8;
             Fecha.Name = "Fecha";
             Fecha.ReadOnly = true;
-            Fecha.Width = 150;
             // 
             // FormTransaccionFactura
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 0, 0);
-            ClientSize = new Size(1003, 519);
+            ClientSize = new Size(1146, 692);
             Controls.Add(btnRegresar);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
@@ -207,7 +211,7 @@
             Controls.Add(btnBuscar);
             Controls.Add(DGVClientes);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
+            Margin = new Padding(3, 5, 3, 5);
             Name = "FormTransaccionFactura";
             Text = "FormTransaccionFactura";
             Load += FormTransaccionFactura_Load;

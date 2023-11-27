@@ -21,7 +21,7 @@ namespace _1W1_GRUPO2_PARTE3.SERVICIO
             fdao = new FacturasDao();
         }
 
-        public bool GrabarFactura(Facturas f)
+        public int GrabarFactura(Facturas f)
         {
             return fdao.GrabarFactura(f);
         }

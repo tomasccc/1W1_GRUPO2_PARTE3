@@ -82,20 +82,20 @@ namespace FrontEnd.PRESENTACION
             {
                 TraerVerificarClienteDTO c = new TraerVerificarClienteDTO();
                 string url = "https://localhost:7214/api/Clientes/VerificarCliente";
-                c.usuario=txtUsuario.Text.ToString();
-                c.contraseña=txtContraseña.Text.ToString();
+                c.usuario = txtUsuario.Text.ToString();
+                c.contraseña = txtContraseña.Text.ToString();
                 bool resultado = await ClienteSingleton.getInstance().PostVerificarClienteAsync(url, c);
                 if (resultado)
                 {
                     url = "https://localhost:7214/api/Clientes/ConsultarCliente";
-                    Cliente cliente= await ClienteSingleton.getInstance().PostConsultarClienteAsync(url, c);
-                    FormPrincipal form = new FormPrincipal(fabricaGestor.CrearGestorCliente(), fabricaGestor.CrearGestorButacas(),fabricaGestor.CrearGestorFuncion(), 
-                    fabricaGestor.CrearGestorFacturas(),fabricaGestor.CrearGestorPeliculas(),esAdmin, cliente);
+                    Cliente cliente = await ClienteSingleton.getInstance().PostConsultarClienteAsync(url, c);
+                    FormPrincipal form = new FormPrincipal(fabricaGestor.CrearGestorCliente(), fabricaGestor.CrearGestorButacas(), fabricaGestor.CrearGestorFuncion(),
+                    fabricaGestor.CrearGestorFacturas(), fabricaGestor.CrearGestorPeliculas(), esAdmin, cliente);
                     form.ShowDialog();
                     this.Close();
                 }
                 else
-                    MessageBox.Show("La contraseña o usuario no son correctos","Ingresar",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                    MessageBox.Show("La contraseña o usuario no son correctos", "Ingresar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -105,8 +105,8 @@ namespace FrontEnd.PRESENTACION
 
             if (txtUsuario.Text == "" || txtUsuario.Text == "USUARIO")
             {
-                MessageBox.Show("Debe ingresar un usuario","Validar",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
-                valido =  false;
+                MessageBox.Show("Debe ingresar un usuario", "Validar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                valido = false;
                 txtUsuario.Focus();
             }
             if (txtContraseña.Text == "" || txtContraseña.Text == "CONTRASEÑA")
@@ -121,14 +121,14 @@ namespace FrontEnd.PRESENTACION
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-             picOcultar.BringToFront();
+            picOcultar.BringToFront();
             txtContraseña.PasswordChar = '\0';
         }
 
         private void picOcultar_Click(object sender, EventArgs e)
         {
-           picVer.BringToFront();
-           txtContraseña.PasswordChar = '*';
+            picVer.BringToFront();
+            txtContraseña.PasswordChar = '*';
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
@@ -174,7 +174,8 @@ namespace FrontEnd.PRESENTACION
             if (checkAdmin.Checked)
             {
                 esAdmin = true;
-            }else
+            }
+            else
                 if (!checkAdmin.Checked)
             {
                 esAdmin = false;

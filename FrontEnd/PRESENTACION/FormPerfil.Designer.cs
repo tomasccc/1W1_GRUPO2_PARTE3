@@ -66,6 +66,7 @@
             // 
             panel1.BackColor = Color.Black;
             panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.ForeColor = Color.Black;
             panel1.Location = new Point(31, 179);
             panel1.Name = "panel1";
             panel1.Size = new Size(200, 3);
@@ -75,6 +76,7 @@
             // 
             lblNombre.AutoSize = true;
             lblNombre.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblNombre.ForeColor = Color.Black;
             lblNombre.Location = new Point(111, 155);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(65, 21);
@@ -85,6 +87,7 @@
             // 
             panel2.BackColor = Color.Black;
             panel2.BorderStyle = BorderStyle.Fixed3D;
+            panel2.ForeColor = Color.Black;
             panel2.Location = new Point(299, 179);
             panel2.Name = "panel2";
             panel2.Size = new Size(200, 3);
@@ -94,6 +97,7 @@
             // 
             panel3.BackColor = Color.Black;
             panel3.BorderStyle = BorderStyle.Fixed3D;
+            panel3.ForeColor = Color.Black;
             panel3.Location = new Point(299, 240);
             panel3.Name = "panel3";
             panel3.Size = new Size(200, 3);
@@ -103,6 +107,7 @@
             // 
             panel4.BackColor = Color.Black;
             panel4.BorderStyle = BorderStyle.Fixed3D;
+            panel4.ForeColor = Color.Black;
             panel4.Location = new Point(31, 240);
             panel4.Name = "panel4";
             panel4.Size = new Size(200, 3);
@@ -112,6 +117,7 @@
             // 
             lblmail.AutoSize = true;
             lblmail.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblmail.ForeColor = Color.Black;
             lblmail.Location = new Point(348, 216);
             lblmail.Name = "lblmail";
             lblmail.Size = new Size(49, 21);
@@ -123,6 +129,7 @@
             // 
             lblTelefono.AutoSize = true;
             lblTelefono.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTelefono.ForeColor = Color.Black;
             lblTelefono.Location = new Point(111, 216);
             lblTelefono.Name = "lblTelefono";
             lblTelefono.Size = new Size(98, 21);
@@ -133,6 +140,7 @@
             // 
             lblApellido.AutoSize = true;
             lblApellido.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblApellido.ForeColor = Color.Black;
             lblApellido.Location = new Point(375, 155);
             lblApellido.Name = "lblApellido";
             lblApellido.Size = new Size(67, 21);
@@ -143,6 +151,7 @@
             // 
             panel5.BackColor = Color.Black;
             panel5.BorderStyle = BorderStyle.Fixed3D;
+            panel5.ForeColor = Color.Black;
             panel5.Location = new Point(142, 329);
             panel5.Name = "panel5";
             panel5.Size = new Size(250, 3);
@@ -152,6 +161,7 @@
             // 
             lblContraseña.AutoSize = true;
             lblContraseña.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblContraseña.ForeColor = Color.Black;
             lblContraseña.Location = new Point(142, 307);
             lblContraseña.Name = "lblContraseña";
             lblContraseña.Size = new Size(89, 21);
@@ -160,9 +170,9 @@
             // 
             // txtContra
             // 
-            txtContra.BackColor = Color.Silver;
+            txtContra.BackColor = Color.Gray;
             txtContra.BorderStyle = BorderStyle.None;
-            txtContra.ForeColor = Color.White;
+            txtContra.ForeColor = Color.Black;
             txtContra.Location = new Point(237, 312);
             txtContra.Name = "txtContra";
             txtContra.Size = new Size(100, 16);
@@ -195,6 +205,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.Black;
             label1.Location = new Point(34, 155);
             label1.Name = "label1";
             label1.Size = new Size(71, 21);
@@ -205,6 +216,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.Black;
             label2.Location = new Point(299, 155);
             label2.Name = "label2";
             label2.Size = new Size(70, 21);
@@ -215,6 +227,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.Black;
             label3.Location = new Point(34, 216);
             label3.Name = "label3";
             label3.Size = new Size(71, 21);
@@ -225,6 +238,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.Black;
             label4.Location = new Point(299, 216);
             label4.Name = "label4";
             label4.Size = new Size(43, 21);
@@ -235,7 +249,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Silver;
+            BackColor = Color.Gray;
             ClientSize = new Size(528, 473);
             Controls.Add(label4);
             Controls.Add(label3);

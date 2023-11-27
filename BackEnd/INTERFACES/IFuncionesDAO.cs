@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BackEnd.DATOS;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace BackEnd.INTERFACES
         DataTable TraerHorarios(int id, string fec);
 
         DataTable TraerIDFuncion(int idp, DateTime fecha, string horario);
+
+        DataTable Traer(List<Parametro> lst, string sp);
 
     }
 }

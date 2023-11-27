@@ -11,8 +11,9 @@ namespace BackEnd.ENTIDADES
         public int IdPelicula { get; set; }
         public int Id { get; set; }
         public int IdSala { get; set; }
+        public int IdtipoSala { get; set; }
         public DateTime fecha { get; set; }
-        public DateTime hora { get; set; }
+        public string hora { get; set; }
         public Funcion()
         {
             

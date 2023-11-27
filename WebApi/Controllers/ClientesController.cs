@@ -24,9 +24,26 @@ namespace WebApi.Controllers
             g = new FactoryServicioImp().CrearGestorCliente();
         }
 
-        
-        //cambiar
+        //consultar clientes con GET
+        [HttpGet("consultar")]
+        public IActionResult GetClientes([FromQuery] ConsultarClienteDTO c)
+        {
+            if (c == null)
+            {
+                return BadRequest("Se requiere una lista de parámetros!");
+            }
 
+            List<Parametro> list = new List<Parametro>();
+            list.Add(new Parametro("@nombre", c.nombre));
+            list.Add(new Parametro("@apellido", c.apellido));
+            list.Add(new Parametro("@email", c.email));
+            list.Add(new Parametro("@telefono", c.telefono.ToString()));
+
+            return Ok(g.TraerCLientes(list));
+        }
+
+
+        //CONSULTAR CLIENTE CON POST
         // POST api/<ClientesController>
         [HttpPost("consultar")]
         public IActionResult Clientes(ConsultarClienteDTO c)
@@ -61,6 +78,24 @@ namespace WebApi.Controllers
         }
 
         // GET api/<ClientesController>
+
+        //METODO NUEVO CON GET
+        [HttpGet("ConsultarCliente")]
+        public IActionResult GetTraer([FromQuery] TraerVerificarClienteDTO c)
+        {
+            if (c == null)
+            {
+                return BadRequest("Se requiere un cliente!");
+            }
+
+            List<Parametro> lista = new List<Parametro>();
+            lista.Add(new Parametro("@usuario", c.usuario));
+            lista.Add(new Parametro("@contra", c.contraseña));
+
+            return Ok(g.TraerCLiente(lista));
+        }
+
+        //METODO CON POST
         [HttpPost("ConsultarCliente")]
         public IActionResult PostTraer(TraerVerificarClienteDTO c)
         {
@@ -74,10 +109,28 @@ namespace WebApi.Controllers
             return Ok(g.TraerCLiente(lista));
         }
 
+        //con GET
+        [HttpGet("VerificarCliente")]
+        public IActionResult GetVerificar([FromQuery] TraerVerificarClienteDTO c)
+        {
+            if (c == null)
+            {
+                return BadRequest("Se requiere un cliente!");
+            }
+
+            List<Parametro> lista = new List<Parametro>();
+            lista.Add(new Parametro("@usuario", c.usuario));
+            lista.Add(new Parametro("@contra", c.contraseña));
+
+            return Ok(g.ExisteCliente(lista));
+        }
+
+
+        //con POST
         [HttpPost("VerificarCliente")]
         public IActionResult PostVerificar(TraerVerificarClienteDTO c)
         {
-            if (c==null)
+            if (c == null)
             {
                 return BadRequest("Se requiere un cliente!");
             }
@@ -105,6 +158,22 @@ namespace WebApi.Controllers
             return Ok(g.EditarCliente(lista));
         }
 
+        //conGET
+        [HttpGet("VerificarMail")]
+        public IActionResult GetVerificarMail([FromQuery] ClienteVerificarMailDTO c)
+        {
+            if (c == null)
+            {
+                return BadRequest("Se requiere un cliente!");
+            }
+
+            List<Parametro> lista = new List<Parametro>();
+            lista.Add(new Parametro("@usu", c.usuario));
+
+            return Ok(g.VerificarMail(lista));
+        }
+
+        //con POST
         [HttpPost("VerificarMail")]
         public IActionResult PostVerificarMail(ClienteVerificarMailDTO c)
         {
@@ -117,6 +186,19 @@ namespace WebApi.Controllers
             return Ok(g.VerificarMail(lista));
         }
 
+        //con DELETE
+        [HttpDelete("BorrarUsuario")]
+        public IActionResult DeleteUsuario(BorrarUsuarioDTO i)
+        {
+            if (i == null)
+            {
+                return BadRequest("Se requiere un cliente!");
+            }
+            return Ok(g.BorrarUsuario(i.id));
+        }
+
+
+        //con put
         [HttpPut("BorrarUsuario")]
         public IActionResult PutBorrar(BorrarUsuarioDTO i)
         {
@@ -144,5 +226,5 @@ namespace WebApi.Controllers
 
 
 
-    } 
+    }
 }

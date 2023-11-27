@@ -64,7 +64,6 @@ namespace FrontEnd.PRESENTACION
         private void CerrarForms()
         {
             this.Close();
-
             FormPrincipal formPrincipal = Application.OpenForms.OfType<FormPrincipal>().FirstOrDefault();
             formPrincipal?.Close();
 

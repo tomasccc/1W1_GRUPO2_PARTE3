@@ -28,6 +28,7 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
         IGestorFunciones gestorf;
         IGestorFacturas gestorfac;
         List<DateTime> fechas;
+        List<Funcion> funciones;
         Pelicula p;
         Funcion funcion;
         List<Butaca> butacasreservadas;
@@ -48,6 +49,7 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
             this.c = c;
             funcion = new Funcion();
             this.nueva = nueva;
+            panel1.SendToBack();
         }
 
         private void FormReservar_Load(object sender, EventArgs e)
@@ -58,11 +60,11 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
         private DateTime EncontrarFecha()
         {
             DateTime d = new DateTime();
-            foreach (DateTime f in fechas)
+            foreach (Funcion f in funciones)
             {
-                if (f.ToString() == cboFunciones.SelectedItem.ToString())
+                if (f.fecha.ToString() == cboFunciones.SelectedItem.ToString())
                 {
-                    d = f; break;
+                    d = f.fecha; break;
                 }
             }
             return d;
@@ -74,15 +76,19 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
             CargarFuncionesDTO c = new CargarFuncionesDTO();
             c.idpelicula = idpelicula;
             string url = "https://localhost:7214/api/Funciones/CargarFechas";
-            List<DateTime> resultado = await ClienteSingleton.getInstance().PostCargarComboFechaAsync(url, c);
-
+            List<Funcion> resultado = await ClienteSingleton.getInstance().PostCargarComboFechaAsync(url, c);
+            fechas = new List<DateTime>();
             if (resultado == null)
             {
-
+                return;
 
             }
             else
-                fechas = resultado;
+                funciones = resultado;
+            foreach (Funcion f in resultado)
+            {
+                fechas.Add(Convert.ToDateTime(f.fecha));
+            }
 
             cboFunciones.DropDownStyle = ComboBoxStyle.DropDownList;
             //cboFunciones.DataSource = fechas;
@@ -104,6 +110,18 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
             cboHorario.DataSource = resultado;
             cboHorario.DropDownStyle = ComboBoxStyle.DropDownList;
 
+
+        }
+
+        private async void CargarTiposSala()
+        {
+            CargarTiposSalaDTO dto = new CargarTiposSalaDTO();
+            dto.fecha = cboFunciones.SelectedItem.ToString();
+            dto.hora = cboHorario.SelectedItem.ToString();
+            string url = "https://localhost:7214/api/Funciones/CargarTiposSala";
+            List<string> resultado = await ClienteSingleton.getInstance().PostCargarTiposSalaAsync(url, dto);
+            cboTipoSala.DataSource = resultado;
+            cboTipoSala.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void cboFunciones_SelectedIndexChanged(object sender, EventArgs e)
@@ -118,8 +136,11 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            cboTipoSala.Enabled = true;
+            CargarTiposSala();
         }
+
+
         public async void CargarButacas(int idFuncion)
         {
             listab.Clear();
@@ -131,8 +152,8 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
             fechaDet = Convert.ToDateTime(cboFunciones.SelectedItem);
             horarioDet = Convert.ToDateTime(cboHorario.SelectedItem);
 
-            int posicionX = 684;
-            int posicionY = 59;
+            int posicionX = 810;
+            int posicionY = 87;
             int c = 1;
             foreach (Butaca elemento in listab)
             {
@@ -140,7 +161,7 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
                 {
                     Text = elemento.columna.ToString(),
                     Location = new System.Drawing.Point(posicionX, posicionY),
-                    Size = new System.Drawing.Size(29, 29),
+                    Size = new System.Drawing.Size(32, 32),
                     Name = elemento.fila + elemento.columna,
                     ForeColor = Color.White
                 };
@@ -154,24 +175,24 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
                 }
                 Controls.Add(nuevoBoton);
 
-                posicionY = posicionY + 39;
-                if (posicionY > 255)
+                posicionY = posicionY + 52;
+                if (posicionY > 347)
                 {
-                    posicionY = 59;
-                    if (posicionX == 441 || posicionX == 643)
+                    posicionY = 87;
+                    if (posicionX == 762 || posicionX == 526)
                     {
-                        posicionX = posicionX - 79;
+                        posicionX = posicionX - 92;
                     }
                     else
                     {
-                        posicionX = posicionX - 41;
+                        posicionX = posicionX - 48;
                     }
                     c++;
                 }
 
             }
             AsignarClickATodosLosBotones();
-
+            panel1.SendToBack();
         }
 
 
@@ -274,13 +295,15 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
                 traerid.idp = p.ID;
                 traerid.fecha = cboFunciones.SelectedItem.ToString();
                 traerid.horario = cboHorario.SelectedItem.ToString();
+
                 string url = "https://localhost:7214/api/Funciones/TraerIdFuncion";
                 int resultado = await ClienteSingleton.getInstance().PostTraerIdFuncionAsync(url, traerid);
-                funcion.Id = resultado;
                 if (resultado != 0)
                 {
+
+                    funcion = EncontrarFuncion();
                     BorrarBotones();
-                    CargarButacas(resultado);
+                    CargarButacas(funcion.Id);
                 }
                 else
                     MessageBox.Show("No se encontró una función con la fecha y horario ingresados", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -288,6 +311,37 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
             }
             else
                 MessageBox.Show("Debe seleccionar un horario y fecha para buscar butacas", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private Funcion EncontrarFuncion()
+        {
+            foreach (Funcion f in funciones)
+            {
+                int tiposala;
+                if (cboTipoSala.SelectedItem.ToString() == "2D")
+                {
+                    tiposala = 1;
+                }
+                else
+                {
+                    if (cboTipoSala.SelectedItem.ToString() == "3D")
+                    {
+                        tiposala = 2;
+                    }
+                    else
+                        tiposala = 0;
+                }
+                if (f.fecha.ToString() == cboFunciones.SelectedItem.ToString())
+                {
+                    if (f.IdtipoSala == tiposala)
+                    {
+                        f.hora = cboHorario.SelectedItem.ToString();
+                        return f;
+                    }
+
+                }
+            }
+            return null;
         }
 
         private void BorrarBotones()
@@ -317,14 +371,41 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
+
             butacasreservadas.Clear();
             GuardarButacasReservadas();
             if (Validar())
             {
-                FormCompra f = new FormCompra(p, gestorfac, butacasreservadas, fechaDet, horarioDet, nueva, c, funcion, this);
+                FormCompra f = new FormCompra(p, gestorfac, butacasreservadas, nueva, c, funcion, this);
                 f.ShowDialog();
             }
         }
+
+        /* private Funcion EncontrarFuncion()
+         {
+             foreach (Funcion f in funciones)
+             {
+                 int tiposala=0;
+                 if (cboTipoSala.SelectedItem.ToString() == "2D")
+                 {
+                     tiposala = 1;
+                 }
+                 else
+                 {
+                     if (cboTipoSala.SelectedItem.ToString()=="3D")
+                     {
+                         tiposala = 2;
+                     }
+                 }
+
+                 if (f.fecha.ToString() == cboFunciones.SelectedItem.ToString() && f.IdtipoSala==tiposala)
+                 {
+                     funcion= f;
+                     break;
+                 }
+             }
+             return funcion;
+         }*/
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
@@ -342,6 +423,21 @@ namespace _1W1_GRUPO2_PARTE3.PRESENTACION
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboTipoSala_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
         {
 
         }

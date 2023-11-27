@@ -23,11 +23,17 @@ namespace BackEnd.DATOS.Implementacion
             return dt;
         }
 
+        public DataTable Traer(List<Parametro> lst,string sp)
+        {
+            return DBHelper.ObtenerInstancia().Consultar(sp, lst);
+        }
+
         public DataTable TraerHorarios(int idFuncion, string fecha)
         {
+
             List<Parametro> list = new List<Parametro>();
             list.Add(new Parametro("id", idFuncion));
-            list.Add(new Parametro("fec", fecha));
+            list.Add(new Parametro("fec", Convert.ToDateTime(fecha)));
 
             DataTable dt = DBHelper.ObtenerInstancia().Consultar("SP_TRAER_HORARIOS", list);
             return dt;

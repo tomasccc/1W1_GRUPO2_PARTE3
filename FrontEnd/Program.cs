@@ -15,9 +15,7 @@ namespace FrontEnd
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-           // Application.Run(new FormPrincipal(new GestorrCliente(),new GestorFunciones(),new bool(),new BackEnd.ENTIDADES.Cliente()));
-            Application.Run(new FormLogin(new FactoryServicioImp()));
-            //Application.Run(new FormReservar(new GestorButacas(),new Pelicula(),new GestorFunciones()));
+           Application.Run(new FormLogin(new FactoryServicioImp()));
         }
     }
 }

@@ -29,243 +29,241 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.labelCrearCuenta = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnCrearCuenta = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.picVer = new System.Windows.Forms.PictureBox();
-            this.picOcultar = new System.Windows.Forms.PictureBox();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.checkAdmin = new System.Windows.Forms.CheckBox();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picVer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picOcultar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.SuspendLayout();
+            txtUsuario = new TextBox();
+            button1 = new Button();
+            labelCrearCuenta = new Label();
+            label4 = new Label();
+            btnCrearCuenta = new Button();
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            panel4 = new Panel();
+            picVer = new PictureBox();
+            picOcultar = new PictureBox();
+            txtContraseña = new TextBox();
+            pictureBox2 = new PictureBox();
+            checkAdmin = new CheckBox();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picVer).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picOcultar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            SuspendLayout();
             // 
             // txtUsuario
             // 
-            this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUsuario.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.txtUsuario.Location = new System.Drawing.Point(335, 102);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(557, 15);
-            this.txtUsuario.TabIndex = 1;
-            this.txtUsuario.Text = "USUARIO";
-            this.txtUsuario.Enter += new System.EventHandler(this.textBox2_Enter);
-            this.txtUsuario.Leave += new System.EventHandler(this.txtUsuario_Leave);
+            txtUsuario.BackColor = Color.FromArgb(64, 0, 0);
+            txtUsuario.BorderStyle = BorderStyle.None;
+            txtUsuario.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            txtUsuario.ForeColor = SystemColors.MenuBar;
+            txtUsuario.Location = new Point(335, 102);
+            txtUsuario.Margin = new Padding(4);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(557, 19);
+            txtUsuario.TabIndex = 0;
+            txtUsuario.Text = "USUARIO";
+            txtUsuario.Enter += textBox2_Enter;
+            txtUsuario.Leave += txtUsuario_Leave;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(335, 232);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(557, 41);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Ingresar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.BackColor = Color.FromArgb(64, 64, 64);
+            button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(335, 232);
+            button1.Margin = new Padding(4);
+            button1.Name = "button1";
+            button1.Size = new Size(557, 41);
+            button1.TabIndex = 3;
+            button1.Text = "Ingresar";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // labelCrearCuenta
             // 
-            this.labelCrearCuenta.AutoSize = true;
-            this.labelCrearCuenta.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.labelCrearCuenta.Location = new System.Drawing.Point(459, 314);
-            this.labelCrearCuenta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelCrearCuenta.Name = "labelCrearCuenta";
-            this.labelCrearCuenta.Size = new System.Drawing.Size(139, 16);
-            this.labelCrearCuenta.TabIndex = 6;
-            this.labelCrearCuenta.Text = "¿No estás registrado?";
-            this.labelCrearCuenta.Click += new System.EventHandler(this.label3_Click);
+            labelCrearCuenta.AutoSize = true;
+            labelCrearCuenta.ForeColor = SystemColors.Highlight;
+            labelCrearCuenta.Location = new Point(459, 314);
+            labelCrearCuenta.Margin = new Padding(4, 0, 4, 0);
+            labelCrearCuenta.Name = "labelCrearCuenta";
+            labelCrearCuenta.Size = new Size(175, 20);
+            labelCrearCuenta.TabIndex = 6;
+            labelCrearCuenta.Text = "¿No estás registrado?";
+            labelCrearCuenta.Click += label3_Click;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(520, 20);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(191, 33);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Iniciar Sesión";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            label4.AutoSize = true;
+            label4.Font = new Font("Microsoft Sans Serif", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(520, 20);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(241, 42);
+            label4.TabIndex = 7;
+            label4.Text = "Iniciar Sesión";
+            label4.Click += label4_Click;
             // 
             // btnCrearCuenta
             // 
-            this.btnCrearCuenta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCrearCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrearCuenta.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnCrearCuenta.Location = new System.Drawing.Point(632, 306);
-            this.btnCrearCuenta.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCrearCuenta.Name = "btnCrearCuenta";
-            this.btnCrearCuenta.Size = new System.Drawing.Size(161, 30);
-            this.btnCrearCuenta.TabIndex = 8;
-            this.btnCrearCuenta.Text = "Crear Cuenta";
-            this.btnCrearCuenta.UseVisualStyleBackColor = true;
-            this.btnCrearCuenta.Click += new System.EventHandler(this.btnCrearCuenta_Click);
+            btnCrearCuenta.Cursor = Cursors.Hand;
+            btnCrearCuenta.FlatStyle = FlatStyle.Flat;
+            btnCrearCuenta.ForeColor = Color.Gainsboro;
+            btnCrearCuenta.Location = new Point(632, 306);
+            btnCrearCuenta.Margin = new Padding(4);
+            btnCrearCuenta.Name = "btnCrearCuenta";
+            btnCrearCuenta.Size = new Size(161, 30);
+            btnCrearCuenta.TabIndex = 4;
+            btnCrearCuenta.Text = "Crear Cuenta";
+            btnCrearCuenta.UseVisualStyleBackColor = true;
+            btnCrearCuenta.Click += btnCrearCuenta_Click;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(313, 358);
-            this.panel1.TabIndex = 9;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            panel1.BackColor = Color.Black;
+            panel1.Controls.Add(pictureBox1);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(4);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(313, 358);
+            panel1.TabIndex = 9;
+            panel1.Paint += panel1_Paint;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-22, 71);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(400, 361);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(-22, 71);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(400, 361);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(335, 124);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(557, 4);
-            this.panel2.TabIndex = 10;
+            panel2.BackColor = Color.Black;
+            panel2.Controls.Add(panel3);
+            panel2.Location = new Point(335, 124);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(557, 4);
+            panel2.TabIndex = 10;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Silver;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(557, 3);
-            this.panel3.TabIndex = 11;
+            panel3.BackColor = Color.Silver;
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(557, 3);
+            panel3.TabIndex = 11;
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.Silver;
-            this.panel4.Location = new System.Drawing.Point(335, 180);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(557, 3);
-            this.panel4.TabIndex = 11;
+            panel4.BackColor = Color.Silver;
+            panel4.Location = new Point(335, 180);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(557, 3);
+            panel4.TabIndex = 11;
             // 
             // picVer
             // 
-            this.picVer.Image = ((System.Drawing.Image)(resources.GetObject("picVer.Image")));
-            this.picVer.Location = new System.Drawing.Point(852, 155);
-            this.picVer.Name = "picVer";
-            this.picVer.Size = new System.Drawing.Size(40, 25);
-            this.picVer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picVer.TabIndex = 12;
-            this.picVer.TabStop = false;
-            this.picVer.Click += new System.EventHandler(this.pictureBox2_Click);
+            picVer.Image = (Image)resources.GetObject("picVer.Image");
+            picVer.Location = new Point(852, 155);
+            picVer.Name = "picVer";
+            picVer.Size = new Size(58, 25);
+            picVer.SizeMode = PictureBoxSizeMode.StretchImage;
+            picVer.TabIndex = 12;
+            picVer.TabStop = false;
+            picVer.Click += pictureBox2_Click;
             // 
             // picOcultar
             // 
-            this.picOcultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.picOcultar.Image = ((System.Drawing.Image)(resources.GetObject("picOcultar.Image")));
-            this.picOcultar.Location = new System.Drawing.Point(852, 155);
-            this.picOcultar.Name = "picOcultar";
-            this.picOcultar.Size = new System.Drawing.Size(40, 25);
-            this.picOcultar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picOcultar.TabIndex = 13;
-            this.picOcultar.TabStop = false;
-            this.picOcultar.Click += new System.EventHandler(this.picOcultar_Click);
+            picOcultar.BackColor = Color.FromArgb(60, 0, 0);
+            picOcultar.Image = (Image)resources.GetObject("picOcultar.Image");
+            picOcultar.Location = new Point(852, 153);
+            picOcultar.Name = "picOcultar";
+            picOcultar.Size = new Size(58, 25);
+            picOcultar.SizeMode = PictureBoxSizeMode.StretchImage;
+            picOcultar.TabIndex = 13;
+            picOcultar.TabStop = false;
+            picOcultar.Click += picOcultar_Click;
             // 
             // txtContraseña
             // 
-            this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtContraseña.ForeColor = System.Drawing.Color.White;
-            this.txtContraseña.Location = new System.Drawing.Point(335, 159);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(511, 15);
-            this.txtContraseña.TabIndex = 14;
-            this.txtContraseña.Text = "CONTRASEÑA";
-            this.txtContraseña.Enter += new System.EventHandler(this.txtContraseña_Enter);
-            this.txtContraseña.Leave += new System.EventHandler(this.txtContraseña_Leave);
+            txtContraseña.BackColor = Color.FromArgb(60, 0, 0);
+            txtContraseña.BorderStyle = BorderStyle.None;
+            txtContraseña.ForeColor = Color.White;
+            txtContraseña.Location = new Point(335, 159);
+            txtContraseña.Name = "txtContraseña";
+            txtContraseña.Size = new Size(511, 19);
+            txtContraseña.TabIndex = 1;
+            txtContraseña.Text = "CONTRASEÑA";
+            txtContraseña.Enter += txtContraseña_Enter;
+            txtContraseña.Leave += txtContraseña_Leave;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(988, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(19, 17);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click_1);
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(988, 12);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(19, 17);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 15;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click_1;
             // 
             // checkAdmin
             // 
-            this.checkAdmin.AutoSize = true;
-            this.checkAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.checkAdmin.Location = new System.Drawing.Point(335, 205);
-            this.checkAdmin.Name = "checkAdmin";
-            this.checkAdmin.Size = new System.Drawing.Size(193, 20);
-            this.checkAdmin.TabIndex = 16;
-            this.checkAdmin.Text = "Ingreso como administrador";
-            this.checkAdmin.UseVisualStyleBackColor = true;
-            this.checkAdmin.CheckedChanged += new System.EventHandler(this.checkAdmin_CheckedChanged);
+            checkAdmin.AutoSize = true;
+            checkAdmin.ForeColor = SystemColors.ControlLightLight;
+            checkAdmin.Location = new Point(335, 205);
+            checkAdmin.Name = "checkAdmin";
+            checkAdmin.Size = new Size(239, 24);
+            checkAdmin.TabIndex = 2;
+            checkAdmin.Text = "Ingreso como administrador";
+            checkAdmin.UseVisualStyleBackColor = true;
+            checkAdmin.CheckedChanged += checkAdmin_CheckedChanged;
             // 
             // FormLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(1019, 358);
-            this.Controls.Add(this.checkAdmin);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.txtContraseña);
-            this.Controls.Add(this.picOcultar);
-            this.Controls.Add(this.picVer);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.txtUsuario);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnCrearCuenta);
-            this.Controls.Add(this.labelCrearCuenta);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FormLogin";
-            this.Opacity = 0.97D;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormLogin";
-            this.Load += new System.EventHandler(this.FormLogin_Load);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picVer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picOcultar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(64, 0, 0);
+            ClientSize = new Size(1019, 358);
+            Controls.Add(checkAdmin);
+            Controls.Add(pictureBox2);
+            Controls.Add(txtContraseña);
+            Controls.Add(picOcultar);
+            Controls.Add(picVer);
+            Controls.Add(panel4);
+            Controls.Add(panel2);
+            Controls.Add(label4);
+            Controls.Add(button1);
+            Controls.Add(txtUsuario);
+            Controls.Add(panel1);
+            Controls.Add(btnCrearCuenta);
+            Controls.Add(labelCrearCuenta);
+            Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4);
+            Name = "FormLogin";
+            Opacity = 0.97D;
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "FormLogin";
+            Load += FormLogin_Load;
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picVer).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picOcultar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

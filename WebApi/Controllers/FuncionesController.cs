@@ -15,12 +15,25 @@ namespace WebApi.Controllers
     public class FuncionesController : ControllerBase
     {
         IGestorFunciones gf;
-       
+
         public FuncionesController()
         {
             gf = new FactoryServicioImp().CrearGestorFuncion();
         }
 
+        //cargar fechas con GET
+        [HttpGet("CargarFechas")]
+        public IActionResult GetCargarFechas([FromQuery] CargarFuncionesDTO c)
+        {
+            if (c == null)
+            {
+                return BadRequest("Se requiere un id_pelicula!");
+            }
+
+            return Ok(gf.TraerFecha(c.idpelicula));
+        }
+
+        //cargar fechas con POST
         [HttpPost("CargarFechas")]
         public IActionResult PostCargarFechas(CargarFuncionesDTO c)
         {
@@ -30,7 +43,18 @@ namespace WebApi.Controllers
             }
             return Ok(gf.TraerFecha(c.idpelicula));
         }
+        //cargar Horarios con Get
+        [HttpGet("CargarHorarios")]
+        public IActionResult GetCargarHorarios([FromQuery] CargarHorariosDTO c)
+        {
+            if (c == null)
+            {
+                return BadRequest("Se requiere un id_pelicula y fecha válidos.");
+            }
 
+            return Ok(gf.TraerHorario(c.Idpelicula, c.fecha));
+        }
+        //cargar Horarios con POST
         [HttpPost("CargarHorarios")]
         public IActionResult PostCargarHorarios(CargarHorariosDTO c)
         {
@@ -38,9 +62,24 @@ namespace WebApi.Controllers
             {
                 return BadRequest("Se requiere un id_pelicula!");
             }
-            return Ok(gf.TraerHorario(c.Idpelicula,c.fecha));
+            return Ok(gf.TraerHorario(c.Idpelicula, c.fecha));
         }
-        
+
+
+        //TRAER ID CON GET
+        [HttpGet("TraerIdFuncion")]
+        public IActionResult GetIdFuncion([FromQuery] TraerIDFuncionDTO c)
+        {
+            if (c == null)
+            {
+                return BadRequest("Se requiere un id_pelicula, fecha y horario válidos.");
+            }
+
+            return Ok(gf.TraerIDFuncion(c.idp, Convert.ToDateTime(c.fecha), c.horario));
+        }
+
+
+        //TRAER ID CON POST
         [HttpPost("TraerIdFuncion")]
         public IActionResult PostIdFuncion(TraerIDFuncionDTO c)
         {
@@ -48,7 +87,30 @@ namespace WebApi.Controllers
             {
                 return BadRequest("Se requiere un id_pelicula!");
             }
-            return Ok(gf.TraerIDFuncion(c.idp, Convert.ToDateTime(c.fecha),c.horario));
+            return Ok(gf.TraerIDFuncion(c.idp, Convert.ToDateTime(c.fecha), c.horario));
+        }
+
+        //cargar tiposala con GET
+        [HttpGet("CargarTiposSala")]
+        public IActionResult GetCargarTiposSala([FromQuery] CargarTiposSalaDTO c)
+        {
+            if (c == null)
+            {
+                return BadRequest("Se requiere un objeto!");
+            }
+
+            return Ok(gf.TraerTiposSala(c.fecha, c.hora));
+        }
+
+        //cargar tiposala con POST
+        [HttpPost("CargarTiposSala")]
+        public IActionResult PostCargarTiposSala(CargarTiposSalaDTO c)
+        {
+            if (c == null)
+            {
+                return BadRequest("Se requiere un objeto!");
+            }
+            return Ok(gf.TraerTiposSala(c.fecha, c.hora));
         }
 
 
