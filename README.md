@@ -1,6 +1,6 @@
 Aplicación de gestión y reserva de butacas de un cine utilizando WinForms y consumo de APIs básico
-Universidad Tecnológica Nacional
 # 1W1_GRUPO2_PARTE3
+Universidad Tecnológica Nacional
 Grupo Nº2
 - Caruso Tomas (405310)
 - Nuñez Isaí(405502)
